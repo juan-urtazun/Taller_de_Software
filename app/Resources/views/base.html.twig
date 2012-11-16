@@ -5,9 +5,122 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
-    </body>
-</html>
+    </head>
+    <body class="body">
+        <div class="contenedor">
+            <!-- INICIO. Medio Página -->
+            <div class="mid">
+                <!-- INICIO. Tabla Sup -->
+                <table class="tmidsup">
+                    <tr class="trmidsup">
+                        <td class="sa1"></td>
+                        <td class="sa2"></td>
+                        <td class="sa3" rowspan="2"><img src="Sys_img/logo.png"/></td>
+                        <td class="sa4"></td>
+                        <td class="sa5">
+                            <span><a href="{{ path('backend_portada') }}">Sistema de Concurso Docente</a>  </span>
+                            <div><img alt="" src="Sys_img/logo.png"/></div>
+                        </td>
+                        <td class="sa6"></td>
+                        <td class="sa7"></td>
+                    </tr>
+                    <tr class="trmidsup">
+                        <td class="sb1"></td>
+                        <td class="sb2"></td>
+                        <td class="sb4"></td>
+                        <!-- INICIO. Menu -->
+                        <td class="menu">
+                            <ul id="topnav">
+                                <li><a href="Adm_Noticia_Adm.aspx" class="menuboton1">Inicio</a></li>
+                                <li><a href="Adm_Noticia_A.aspx" class="menuboton1">Nueva Noticia</a></li>
+                                <li>
+                                    <a href="#" class="menuboton2">Noticias</a>
+                                    <div class="sub">
+                                        <ul>
+                                            <li><h2>Noticias</h2></li>
+                                            <li><a href="Adm_Noticia_A.aspx">Alta</a></li>
+                                            <li><a href="Adm_Noticia_Adm.aspx">Administración</a></li>
+                                            <li><a href="Adm_Noticia_Posicion.aspx">Administrar Posiciones</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" class="menuboton2">Rotador</a>
+                                    <div class="sub">
+                                        <ul>
+                                            <li><h2>Rotador de Imágenes</h2></li>
+                                            <li><a href="Adm_GaleriaImg_A.aspx">Alta</a></li>
+                                            <li><a href="Adm_GaleriaImg_Adm.aspx">Administración</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" class="menuboton2">Publicidades</a>
+                                    <div class="sub">
+                                        <ul>
+                                            <li><h2>Publicidades</h2></li>
+                                            <li><a href="#">Alta</a></li>
+                                            <li><a href="#">Administración</a></li>
+                                            <li><a href="#">Administrar Posiciones</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="botonfin"><div class="botonfinal"></div></li>
+                            </ul> 
+                        </td>
+                        <!-- FIN. Menu -->
+                        <td class="sb6"></td>
+                        <td class="sb7"></td>
+                    </tr>
+                    <tr class="trmidsup">
+                        <td class="sc1"></td>
+                        <td class="sc2"></td>
+                        <td class="sc3"></td>
+                        <td class="sc4"></td>
+                        <td class="sc5"></td>
+                        <td class="sc6"></td>
+                        <td class="sc7"></td>
+                    </tr>
+                </table>
+                <!-- FIN. Tabla Sup -->
+                <!-- INICIO. Tabla Medio -->
+                <table class="tmidmid">
+                    <tr class="trmidmid"><td class="b1"></td>
+                        <!-- INICIO. TD MEDIO -->
+                        <td class="tdmed">
+                            <!-- INICIO. CONTENT MASTER -->
+                            <div class="divinterna">      
+                {% block body %}{% endblock %}
+                                </div>
+                                <!-- INICIO. CONTENT MASTER -->
+                            </td>
+                            <!-- FIN. TD MEDIO -->
+                            <td class="b3"></td></tr>
+                        <tr class="trmidinf"><td class="c1"></td><td class="c2"></td><td class="c3"></td></tr>    
+                    </table>
+                    <!-- FIN. Tabla Medio -->
+                    <!-- INICIO. Pie de Página -->
+                    <div class="bot">
+                        <div class="bot1">
+                            <div class="footer_links">
+                                <strong>© medicina.</strong> 
+                                <a href="#">Sobre</a>
+                                <a href="#">Terminos del Servicio</a> 
+                                <a href="#">Contacto y Ayuda</a> 
+                            </div>
+                        </div>
+                        <div class="bot2">
+                            Sistema Desarrollado por<br />
+                            Grupo 1
+                        </div>
+                    </div>
+                    <!-- FIN. Pie de Página -->
+                </div>
+                <!-- FIN. Medio Página -->
+            </div>
+
+        
+        </body>
+    </html>
+
