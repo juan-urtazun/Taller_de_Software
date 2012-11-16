@@ -1,0 +1,7 @@
+parameters:
+#    medicina_kernel.example.class: Medicina\KernelBundle\Example
+
+services:
+#    medicina_kernel.example:
+#        class: %medicina_kernel.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
