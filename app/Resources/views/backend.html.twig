@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+{% block stylesheets %}
+    <link href="{{ asset('css/backend.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block body %}
+    <article>
+        {% block article %}{% endblock %}
+    </article>
+{% endblock %}

@@ -1,0 +1,12 @@
+#BackendBundle_homepage:
+#    pattern:  /hello/{name}
+#    defaults: { _controller: BackendBundle:Default:index }
+
+# Portada de la parte de administración
+backend_portada:
+    pattern:  /
+    defaults: { _controller: BackendBundle:Oficina:index }
+
+BackendOficina:
+    resource: "@BackendBundle/Resources/config/routing/oficina.yml"
+    prefix: /oficina

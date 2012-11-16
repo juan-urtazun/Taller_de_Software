@@ -1,0 +1,40 @@
+{% extends '::backend.html.twig' %}
+
+{% block id 'oficina' %}
+{% block title %}Datos de la oficina {% endblock %}
+
+{% block article %}
+<h1>{{ block('title') }}</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Nombre</th>
+            <td>{{ entity.nombre }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('backend_oficina') }}">
+            Volver al listado
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('backend_oficina_edit', { 'id': entity.id }) }}">
+            Modificar oficina
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('backend_oficina_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Borrar oficina</button>
+        </form>
+    </li>
+</ul>
+{% endblock %}
