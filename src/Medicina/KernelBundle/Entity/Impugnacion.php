@@ -44,12 +44,110 @@ class Impugnacion {
      */
     protected $fechaResolucion;
 
-    /** @ORM\ManyToOne(targetEntity="Taller\Kernel\KernelBundle\Entity\Oficina") */
-    protected $oficina;
+//    /** @ORM\ManyToOne(targetEntity="Taller\Kernel\KernelBundle\Entity\Oficina") */
+//    protected $oficina;
+//
+//    /** @ORM\ManyToOne(targetEntity="Taller\Kernel\KernelBundle\Entity\Concurso") */
+//    protected $concurso;
 
-    /** @ORM\ManyToOne(targetEntity="Taller\Kernel\KernelBundle\Entity\Concurso") */
-    protected $concurso;
 
+    /**
+     * Set id
+     *
+     * @param integer $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set fechaRecibida
+     *
+     * @param datetime $fechaRecibida
+     */
+    public function setFechaRecibida($fechaRecibida)
+    {
+        $this->fechaRecibida = $fechaRecibida;
+    }
+
+    /**
+     * Get fechaRecibida
+     *
+     * @return datetime 
+     */
+    public function getFechaRecibida()
+    {
+        return $this->fechaRecibida;
+    }
+
+    /**
+     * Set observacion
+     *
+     * @param text $observacion
+     */
+    public function setObservacion($observacion)
+    {
+        $this->observacion = $observacion;
+    }
+
+    /**
+     * Get observacion
+     *
+     * @return text 
+     */
+    public function getObservacion()
+    {
+        return $this->observacion;
+    }
+
+    /**
+     * Set fecha_expiracion
+     *
+     * @param date $fechaExpiracion
+     */
+    public function setFechaExpiracion($fechaExpiracion)
+    {
+        $this->fecha_expiracion = $fechaExpiracion;
+    }
+
+    /**
+     * Get fecha_expiracion
+     *
+     * @return date 
+     */
+    public function getFechaExpiracion()
+    {
+        return $this->fecha_expiracion;
+    }
+
+    /**
+     * Set fechaResolucion
+     *
+     * @param date $fechaResolucion
+     */
+    public function setFechaResolucion($fechaResolucion)
+    {
+        $this->fechaResolucion = $fechaResolucion;
+    }
+
+    /**
+     * Get fechaResolucion
+     *
+     * @return date 
+     */
+    public function getFechaResolucion()
+    {
+        return $this->fechaResolucion;
+    }
 }
-
-?>

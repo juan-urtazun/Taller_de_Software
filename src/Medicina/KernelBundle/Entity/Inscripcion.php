@@ -14,8 +14,38 @@
 
 namespace  Medicina\KernelBundle\Entity;
 
-class Inscripcion {
-    //put your code here
-}
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
-?>
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="Inscripcion")
+ */
+class Inscripcion {
+     /**
+     * @ORM\Column(type="integer") 
+     * @ORM\GeneratedValue
+     */
+    protected $id;
+
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}

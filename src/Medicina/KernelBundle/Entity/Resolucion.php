@@ -32,13 +32,91 @@ class Resolucion {
 
     /** @ORM\Column(type="text"), nullable=true) */
     protected $observacion;
+//
+//    /** @ORM\ManyToOne(targetEntity="Taller\Kernel\KernelBundle\Entity\Concurso") */
+//    protected $concurso;
+//
+//    /** @ORM\ManyToOne(targetEntity="Taller\Kernel\KernelBundle\Entity\Oficina") */
+//    protected $oficina;
 
-    /** @ORM\ManyToOne(targetEntity="Taller\Kernel\KernelBundle\Entity\Concurso") */
-    protected $concurso;
 
-    /** @ORM\ManyToOne(targetEntity="Taller\Kernel\KernelBundle\Entity\Oficina") */
-    protected $oficina;
+    /**
+     * Set id
+     *
+     * @param integer $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
 
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set fecha
+     *
+     * @param date $fecha
+     */
+    public function setFecha($fecha)
+    {
+        $this->fecha = $fecha;
+    }
+
+    /**
+     * Get fecha
+     *
+     * @return date 
+     */
+    public function getFecha()
+    {
+        return $this->fecha;
+    }
+
+    /**
+     * Set numero
+     *
+     * @param integer $numero
+     */
+    public function setNumero($numero)
+    {
+        $this->numero = $numero;
+    }
+
+    /**
+     * Get numero
+     *
+     * @return integer 
+     */
+    public function getNumero()
+    {
+        return $this->numero;
+    }
+
+    /**
+     * Set observacion
+     *
+     * @param text $observacion
+     */
+    public function setObservacion($observacion)
+    {
+        $this->observacion = $observacion;
+    }
+
+    /**
+     * Get observacion
+     *
+     * @return text 
+     */
+    public function getObservacion()
+    {
+        return $this->observacion;
+    }
 }
-
-?>
