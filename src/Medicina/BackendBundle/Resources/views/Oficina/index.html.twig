@@ -24,8 +24,9 @@
                     <tr class="{{ cycle(['GrillaRow','GrillaRowAlt'],loop.index) }}">
                         <td>{{ oficina.nombre }}</td>           
                         <td valign="middle" align="center" style="width:30px;">
-                            <a href="{{ path('backend_oficina_edit',
-                                { 'id': oficina.id }) }}"><img src="{{ asset('images/btn/btn32/edit_item.png') }}" alt="Editar" /></a>
+                            <a href="{{ path('backend_oficina_edit', { 'id': oficina.id }) }}">
+                                <img src="{{ asset('images/btn/btn32/edit_item.png') }}" alt="Editar" />
+                            </a>
                         </td>
                         <td valign="middle" align="center" style="width:30px;">
                             <a href="#"><img src="{{ asset('images/btn/btn32/delete_item.png') }}" alt="Eliminar" /></a>

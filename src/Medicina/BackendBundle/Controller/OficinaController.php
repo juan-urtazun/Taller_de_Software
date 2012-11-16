@@ -20,7 +20,6 @@ class OficinaController extends Controller {
         $em = $this->getDoctrine()->getEntityManager();
 
         $entities = $em->getRepository('BackendBundle:Oficina')->findAll();
-
         return $this->render('BackendBundle:Oficina:index.html.twig', array(
                     'entities' => $entities
                 ));
@@ -54,7 +53,7 @@ class OficinaController extends Controller {
     public function newAction() {
         $entity = new Oficina();
         $form = $this->createForm(new OficinaType(), $entity);
-
+                
         return $this->render('BackendBundle:Oficina:new.html.twig', array(
                     'entity' => $entity,
                     'form' => $form->createView()

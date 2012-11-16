@@ -14,19 +14,21 @@
         <td class="tdcuerpo">
             <table class="componentes">
                 {% for child in form.children %}
-                <tr>
-                    <!-- Nombre -->
-                    <td class="col1">
-                    </td>
-                    <td class="col2">
-                       {{ form_label(child) }}
-                    </td>
-                    <td class="col3">
-                        {{ form_widget(child) }}
-                    </td>
-                    <td class="col4">
-                    </td>
-                </tr>
+                    {% if "hidden" not in child.vars.types %}
+                        <tr>
+                            <!-- Nombre -->
+                            <td class="col1">
+                            </td>
+                            <td class="col2">
+                               {{ form_label(child) }}
+                            </td>
+                            <td class="col3">
+                                {{ form_widget(child) }}
+                            </td>
+                            <td class="col4">
+                            </td>
+                        </tr>
+                      {% endif %}
                 {% endfor %}
                 
             </table>
