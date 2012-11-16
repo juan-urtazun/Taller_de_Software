@@ -1,0 +1,43 @@
+{% extends '::backend.html.twig' %}
+{% block id 'oficina' %}
+{% block article %}
+<form action="{{ path('backend_oficina_create') }}" method="post" {{ form_enctype(form) }}>
+<table class="tablaprincipal">
+    <tr class="trtitulopagina">
+        <td colspan="3">
+            <div>
+               {% block title %}Nueva Oficina{% endblock %}
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdcuerpo">
+            <table class="componentes">
+                {% for child in form.children %}
+                <tr>
+                    <!-- Nombre -->
+                    <td class="col1">
+                    </td>
+                    <td class="col2">
+                       {{ form_label(child) }}
+                    </td>
+                    <td class="col3">
+                        {{ form_widget(child) }}
+                    </td>
+                    <td class="col4">
+                    </td>
+                </tr>
+                {% endfor %}
+                
+            </table>
+        </td>
+    </tr>
+    <tr class="trbotones">
+        <td style="padding-left: 20px;">
+            <button class="btnaceptar" type="submit"></button>
+            <a class="btncancelar" href="{{ path('backend_oficina') }}"></a>
+        </td>
+    </tr>
+</table>
+</form>
+{% endblock %}
