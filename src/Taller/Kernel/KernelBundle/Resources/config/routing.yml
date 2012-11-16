@@ -1,0 +1,3 @@
+TallerKernelKernelBundle_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: TallerKernelKernelBundle:Default:index }
