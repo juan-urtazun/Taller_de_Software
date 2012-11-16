@@ -1,12 +1,9 @@
-MedicinaKernelBundle:
-    resource: "@MedicinaKernelBundle/Resources/config/routing.yml"
-    prefix:   /
 
 # Rutas importadas del bundle BackendBundle
 BackendBundle:
     resource: "@BackendBundle/Resources/config/routing.yml"
     prefix:   /backend
     
-TallerKernelKernelBundle:
-    resource: "@TallerKernelKernelBundle/Resources/config/routing.yml"
+MedicinaKernelBundle:
+    resource: "@MedicinaKernelBundle/Resources/config/routing.yml"
     prefix:   /

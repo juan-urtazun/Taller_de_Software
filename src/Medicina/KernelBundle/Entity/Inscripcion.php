@@ -10,6 +10,10 @@
  *
  * @author juan
  */
+
+
+namespace  Medicina\KernelBundle\Entity;
+
 class Inscripcion {
     //put your code here
 }

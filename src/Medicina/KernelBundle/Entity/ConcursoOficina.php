@@ -10,6 +10,9 @@
  *
  * @author juan
  */
+
+namespace  Medicina\KernelBundle\Entity;
+
 class ConcursoOficina {
     //put your code here
 }

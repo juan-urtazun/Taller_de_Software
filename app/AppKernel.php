@@ -17,7 +17,6 @@ class AppKernel extends Kernel {
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Medicina\BackendBundle\BackendBundle(),
-            new Taller\Kernel\KernelBundle\TallerKernelKernelBundle(),
             new Medicina\KernelBundle\MedicinaKernelBundle(),
         );
 
