@@ -32,16 +32,13 @@
                         <!-- INICIO. Menu -->
                         <td class="menu">
                             <ul id="topnav">
-                                <li><a href="Adm_Noticia_Adm.aspx" class="menuboton1">Inicio</a></li>
-                                <li><a href="Adm_Noticia_A.aspx" class="menuboton1">Nueva Noticia</a></li>
+                                <li><a href="{{ path('backend_index') }}" class="menuboton1">Inicio</a></li>
                                 <li>
-                                    <a href="#" class="menuboton2">Noticias</a>
+                                    <a href="#" class="menuboton2">Oficina</a>
                                     <div class="sub">
                                         <ul>
-                                            <li><h2>Noticias</h2></li>
-                                            <li><a href="Adm_Noticia_A.aspx">Alta</a></li>
-                                            <li><a href="Adm_Noticia_Adm.aspx">Administración</a></li>
-                                            <li><a href="Adm_Noticia_Posicion.aspx">Administrar Posiciones</a></li>
+                                            <li><a href="{{ path('backend_oficina_new') }}">Alta</a></li>
+                                            <li><a href="{{ path('backend_oficina') }}">Administración</a></li>
                                         </ul>
                                     </div>
                                 </li>
