@@ -8,6 +8,7 @@ textarea {resize: none;}
 /*/// ESTRUCTURA PRINCIPAL /////////////////////////////*/
 /*//////////////////////////////////////////////////////*/
 .body{background-color: #274567;background-image: url(../images/map_bg.jpg);background-attachment: fixed;background-repeat: repeat-x;font-family: Verdana,Arial,Helvetica,sans-serif;}
+/*.body{background-color: #274567;background-image: url(../images/login/bkg_grisDF_1.png);background-attachment: fixed;background-repeat: repeat-x;font-family: Verdana,Arial,Helvetica,sans-serif;}*/
 .contenedor{max-width: 911px;height: 100%;margin: 0 auto;padding: 20px 0px 0px 0px;}
 .barrasesion{width: 100%;text-align: center;height: 42px;position: fixed;background: url(../images/session/fondobarrasup.png) repeat-x top;background-color: transparent;z-index: 9999;left:0px; top:0px;}
 .mid{max-width: 911px;float:left;margin: 45px 0px 0px 0px;}
@@ -179,7 +180,7 @@ table.subGrillaNormal td img {width:15px; height:15px;}
 /*//////////////////////////////////////////////////////*/
 /*/// BOTONES DE ACCION ////////////////////////////////*/
 /*//////////////////////////////////////////////////////*/
-.btnOficinaNew { display: block; height: 34px;background: transparent url(../images/btn/oficinaNew.png) no-repeat scroll left top;margin-right:5px;border:none;cursor:pointer;}
+.btnOficinaNew { display: block; height: 34px; width: 142px; background: transparent url(../images/btn/oficinaNew.png) no-repeat scroll left top;margin-right:5px;border:none;cursor:pointer;}
 .btnOficinaNew:hover{background-position:left -34px;}
 .btnaceptar{ float: left; height: 34px;width: 96px;background: transparent url(../images/btn/aceptar.png) no-repeat scroll left top;margin-right:5px;border:none;cursor:pointer;}
 .btnaceptar:hover{background-position:left -34px;}

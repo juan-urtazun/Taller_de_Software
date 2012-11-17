@@ -20,7 +20,7 @@
                         <td class="sa4"></td>
                         <td class="sa5">
                             <span><a href="#">Sistema de Concurso Docente</a>  </span>
-                            <div><img alt="" src="Sys_img/logo.png"/></div>
+                            <div><img alt="" src="{{ asset('images/logo.png') }}"/></div>
                         </td>
                         <td class="sa6"></td>
                         <td class="sa7"></td>
@@ -88,12 +88,13 @@
                         <td class="tdmed">
                             <!-- INICIO. CONTENT MASTER -->
                             <div class="divinterna">      
-                {% block body %}{% endblock %}
+                                {% block body %}{% endblock %}
                                 </div>
                                 <!-- INICIO. CONTENT MASTER -->
                             </td>
                             <!-- FIN. TD MEDIO -->
-                            <td class="b3"></td></tr>
+                            <td class="b3"></td>
+                        </tr>
                         <tr class="trmidinf"><td class="c1"></td><td class="c2"></td><td class="c3"></td></tr>    
                     </table>
                     <!-- FIN. Tabla Medio -->
@@ -108,16 +109,13 @@
                             </div>
                         </div>
                         <div class="bot2">
-                            Sistema Desarrollado por<br />
-                            Grupo 1
+                            Sistema Desarrollado por Grupo 1
                         </div>
                     </div>
                     <!-- FIN. Pie de Página -->
                 </div>
                 <!-- FIN. Medio Página -->
-            </div>
-
-        
+            </div>       
         </body>
     </html>
 
