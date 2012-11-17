@@ -32,7 +32,7 @@ class CatedraController extends Controller {
     public function showAction($id) {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $entity = $em->getRepository('BackendBundle:Catedra')->find($id);
+        $entity = $em->getRepository('MedicinaKernelBundle:Catedra')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('No se ha encontrado la oficina solicitada');
@@ -91,7 +91,7 @@ class CatedraController extends Controller {
     public function editAction($id) {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $entity = $em->getRepository('BackendBundle:Catedra')->find($id);
+        $entity = $em->getRepository('MedicinaKernelBundle:Catedra')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('No se ha encontrado la oficina solicitada');
@@ -112,7 +112,7 @@ class CatedraController extends Controller {
     public function updateAction($id) {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $entity = $em->getRepository('BackendBundle:Catedra')->find($id);
+        $entity = $em->getRepository('MedicinaKernelBundle:Catedra')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('No se ha encontrado la oficina solicitada');
@@ -151,7 +151,7 @@ class CatedraController extends Controller {
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getEntityManager();
-            $entity = $em->getRepository('BackendBundle:Catedra')->find($id);
+            $entity = $em->getRepository('MedicinaKernelBundle:Catedra')->find($id);
 
             if (!$entity) {
                 throw $this->createNotFoundException('No se ha encontrado la oficina solicitada');
