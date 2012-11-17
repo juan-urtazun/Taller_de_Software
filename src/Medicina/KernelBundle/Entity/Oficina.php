@@ -1,37 +1,53 @@
-<?php 
+<?php
+
+namespace  Medicina\KernelBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @author juan
+ * Medicina\KernelBundle\Entity\Oficina
  */
+class Oficina
+{
+    /**
+     * @var integer $id
+     */
+    private $id;
 
-//namespace Taller\Kernel\KernelBundle\Entity;
-//
-//use Doctrine\ORM\Mapping as ORM;
-//use Symfony\Component\Validator\Constraints as Assert;
-//
-///**
-// * @ORM\Entity
-// * @ORM\Table(name="Oficina")
-// */
-//class Oficina {
-//
-//    /**
-//     * @ORM\Column(type="integer") 
-//     * @ORM\GeneratedValue
-//     */
-//    protected $id;
-//
-//    /**
-//     * @ORM\Column(type="string")
-//     * @Assert\NotBlank(message="Debe escribir un nombre")
-//     */
-//    protected $nombre;
-//
-//    /**
-//     * @ORM\Column(type="string",unique=true))
-//     */
-//    protected $codigo;
-//
-//}
+    /**
+     * @var string $nombre
+     */
+    private $nombre;
 
-?>
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string 
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+}

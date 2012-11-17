@@ -3,7 +3,7 @@
 namespace Medicina\BackendBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Medicina\BackendBundle\Entity\Oficina;
+use Medicina\KernelBundle\Entity\Oficina;
 use Medicina\BackendBundle\Form\OficinaType;
 
 /**
@@ -19,7 +19,7 @@ class OficinaController extends Controller {
     public function indexAction() {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $entities = $em->getRepository('BackendBundle:Oficina')->findAll();
+        $entities = $em->getRepository('MedicinaKernelBundle:Oficina')->findAll();
         return $this->render('BackendBundle:Oficina:index.html.twig', array(
                     'entities' => $entities
                 ));
@@ -32,7 +32,7 @@ class OficinaController extends Controller {
     public function showAction($id) {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $entity = $em->getRepository('BackendBundle:Oficina')->find($id);
+        $entity = $em->getRepository('MedicinaKernelBundle:Oficina')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('No se ha encontrado la oficina solicitada');
@@ -91,7 +91,7 @@ class OficinaController extends Controller {
     public function editAction($id) {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $entity = $em->getRepository('BackendBundle:Oficina')->find($id);
+        $entity = $em->getRepository('MedicinaKernelBundle:Oficina')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('No se ha encontrado la oficina solicitada');
@@ -112,7 +112,7 @@ class OficinaController extends Controller {
     public function updateAction($id) {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $entity = $em->getRepository('BackendBundle:Oficina')->find($id);
+        $entity = $em->getRepository('MedicinaKernelBundle:Oficina')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('No se ha encontrado la oficina solicitada');
@@ -151,7 +151,7 @@ class OficinaController extends Controller {
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getEntityManager();
-            $entity = $em->getRepository('BackendBundle:Oficina')->find($id);
+            $entity = $em->getRepository('MedicinaKernelBundle:Oficina')->find($id);
 
             if (!$entity) {
                 throw $this->createNotFoundException('No se ha encontrado la oficina solicitada');
