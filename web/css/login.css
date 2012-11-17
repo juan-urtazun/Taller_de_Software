@@ -1,0 +1,49 @@
+
+html, body, div, span, applet, object, iframe,
+ h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align: baseline;}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {display: block;}
+body {line-height: 1;}
+ol, ul {list-style: none;list-style-position:outside;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: '';content: none;}
+table {border-collapse: collapse;border-spacing:0;}
+
+body{background:url(../images/login/bkg_grisDF_1.png);color:#000;font-family:Helvetica,sans-serif;font-size:12px;}
+#block{width:426px;margin:0 auto;position:relative;}
+.logo{margin-top: 15px; margin-left:460px;}
+.form{background:url(../images/login/form.png) repeat-y;padding:13px 0 25px 0;margin-top:18px;position:relative;}
+.form .login-box{background:url(../images/login/login-box.png) no-repeat;color:#fff;font-size:14px;font-weight:bold;text-transform:uppercase;
+	width:93px;padding:14px 0 14px 16px;margin-bottom:11px;position:relative;left:-4px;float:left;}
+.form .warning {background:url(../images/login/warning.png) no-repeat;height:28px;padding:0 0 0 34px;margin:7px 0px 0 113px;position:relative;}
+.form .warning p {background:url(../images/login/warning-p.png) repeat-x left center;color:#c51f00;font-size:11px;height:19px;font-weight:bold;padding:9px 6px 0 0;float:left;}
+.form .warning p.c {background:url(../images/login/warning-p.c.png) no-repeat right center;text-indent:-1000px;padding:0 0 0 0;height:28px;width:2px;}
+.form input {background:url(../images/login/input.png) no-repeat;color:#5d5d5d;font-size:12px;font-style:italic;
+	width:322px;height:43px;padding-left:18px;margin:0 0 16px 40px;border:none;clear:left;}
+.form .btn {padding-bottom:0;float:left;}
+.form .btn input{background:url(../images/login/p.btn-input.png) no-repeat;color:#fff;font-size:12px;font-weight:bold;text-transform:uppercase;font-style:normal;text-indent:-1000px;
+	width:111px;line-height:43px;padding:0;margin:0 0 0 40px;border:none;cursor:pointer;float:left;}
+.form .btn input:hover{background:url(../images/login/p.btn-input.hover.png) no-repeat;}
+.form .nav-path{margin-left:162px;}
+.form .nav-path li{line-height:19px;}
+.form .nav-path li a{color:#005fa2;font-size:11px;}
+.form .nav-path li a:hover{text-decoration:none;}
+
+.c {background:url(../images/login/c.png) no-repeat-x;height:28px;width:2px;}
+.c2 {background:url(../images/login/warning.png) no-repeat top left;position:absolute;top:0;left:50px;height:28px;width:2px;}
+.ctop {background:url(../images/login/ctop.png) no-repeat;width:426px;height:6px;position:absolute;top:-6px;left:0;}
+.cbottom {background:url(../images/login/cbottom.png) no-repeat;width:426px;height:6px;position:absolute;bottom:-6px;left:0;}
+

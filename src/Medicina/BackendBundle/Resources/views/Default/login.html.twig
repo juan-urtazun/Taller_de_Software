@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Acceso a Sistema de Concurso Docentes{% endblock %}</title>
+        {% block stylesheets %}
+        <link href="{{ asset('css/login.css') }}" rel="stylesheet" type="text/css" />
+        {% endblock %}
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+        {% block javascripts %}{% endblock %}
+    </head>
+    <body>
+        <form action="{{ path('backend_index') }}" >
+            <div class="logo"><img src="{{ asset('images/login/24.png') }}" alt="" />
+            </div>
+            <div id="block">
+
+                <div class="form">
+                    <p class="login-box">Login</p>
+                    <input type="text" value="Usuario"/>
+                    <input type="text" value="*******"/>
+                    <p class="btn">
+                        <input type="submit" value="Login"/>
+                    </p>
+                    <ul class="nav-path">
+                        <li><a href="#">Recuperar Contraseña</a></li>
+                    </ul>
+                    <i class="ctop">&nbsp;</i>
+                    <i class="cbottom">&nbsp;</i>
+                    
+                </div>
+                <br>
+                <br>
+                <h1>PARA INGRESAR AL SISTEMA SOLO PRESIONEN "LOGIN"</h1>
+            </div>
+                
+        </form>
+    </body>
+</html>
