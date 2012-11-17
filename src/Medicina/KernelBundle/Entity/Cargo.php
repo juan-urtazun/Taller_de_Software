@@ -16,7 +16,9 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Cargo {
 
-    /** @ORM\Column(type="integer") 
+    /**
+     * @ORM\Id
+     *  @ORM\Column(type="integer") 
      * @ORM\GeneratedValue
      */
     protected $id;

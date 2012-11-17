@@ -1,0 +1,30 @@
+backend_catedra:
+    pattern:  /
+    defaults: { _controller: "BackendBundle:Catedra:index" }
+
+backend_catedra_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BackendBundle:Catedra:show" }
+
+backend_catedra_new:
+    pattern:  /new
+    defaults: { _controller: "BackendBundle:Catedra:new" }
+
+backend_catedra_create:
+    pattern:  /create
+    defaults: { _controller: "BackendBundle:Catedra:create" }
+    requirements: { _method: post }
+
+backend_catedra_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BackendBundle:Catedra:edit" }
+
+backend_catedra_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BackendBundle:Catedra:update" }
+    requirements: { _method: post }
+
+backend_catedra_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BackendBundle:Catedra:delete" }
+    requirements: { _method: post }

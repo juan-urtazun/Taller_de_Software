@@ -23,6 +23,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Inscripcion {
      /**
+      * @ORM\Id
      * @ORM\Column(type="integer") 
      * @ORM\GeneratedValue
      */

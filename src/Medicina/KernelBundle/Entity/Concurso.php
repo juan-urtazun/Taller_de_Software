@@ -11,6 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 
 /**
+ *
  * @ORM\Entity
  * @ORM\Table(name="Concurso")
  */
@@ -18,7 +19,9 @@ class Concurso {
 
 
 
-/** @ORM\Column(type="integer") 
+/**
+ *  @ORM\Id
+ *  @ORM\Column(type="integer") 
  * @ORM\GeneratedValue
  */
 protected $id;

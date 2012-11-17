@@ -18,7 +18,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Usuario {
 
     /**
-     * @ORM\Column(type="integer") 
+     * @ORM\Id
+     *  @ORM\Column(type="integer") 
      * @ORM\GeneratedValue
      */
     protected $id;
@@ -35,14 +36,12 @@ class Usuario {
 //     * */
 //    protected $persona;
 
-
     /**
      * Set id
      *
      * @param integer $id
      */
-    public function setId($id)
-    {
+    public function setId($id) {
         $this->id = $id;
     }
 
@@ -51,8 +50,7 @@ class Usuario {
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -61,8 +59,7 @@ class Usuario {
      *
      * @param string $username
      */
-    public function setUsername($username)
-    {
+    public function setUsername($username) {
         $this->username = $username;
     }
 
@@ -71,8 +68,7 @@ class Usuario {
      *
      * @return string 
      */
-    public function getUsername()
-    {
+    public function getUsername() {
         return $this->username;
     }
 
@@ -81,8 +77,7 @@ class Usuario {
      *
      * @param string $password
      */
-    public function setPassword($password)
-    {
+    public function setPassword($password) {
         $this->password = $password;
     }
 
@@ -91,8 +86,8 @@ class Usuario {
      *
      * @return string 
      */
-    public function getPassword()
-    {
+    public function getPassword() {
         return $this->password;
     }
+
 }

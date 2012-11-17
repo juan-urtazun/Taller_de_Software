@@ -6,7 +6,7 @@
  * @author juan
  */
 
-namespace  Medicina\KernelBundle\Entity;
+namespace Medicina\KernelBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -18,7 +18,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 class PersonaCargo {
 
     /**
-     * @ORM\Column(type="integer") 
+     * @ORM\Id
+     *  @ORM\Column(type="integer") 
      * @ORM\GeneratedValue
      */
     protected $id;
@@ -42,14 +43,12 @@ class PersonaCargo {
      */
     protected $fecha_fin;
 
-
     /**
      * Set id
      *
      * @param integer $id
      */
-    public function setId($id)
-    {
+    public function setId($id) {
         $this->id = $id;
     }
 
@@ -58,8 +57,7 @@ class PersonaCargo {
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -68,8 +66,7 @@ class PersonaCargo {
      *
      * @param boolean $renueva
      */
-    public function setRenueva($renueva)
-    {
+    public function setRenueva($renueva) {
         $this->renueva = $renueva;
     }
 
@@ -78,8 +75,7 @@ class PersonaCargo {
      *
      * @return boolean 
      */
-    public function getRenueva()
-    {
+    public function getRenueva() {
         return $this->renueva;
     }
 
@@ -88,8 +84,7 @@ class PersonaCargo {
      *
      * @param datetime $fechaInicio
      */
-    public function setFechaInicio($fechaInicio)
-    {
+    public function setFechaInicio($fechaInicio) {
         $this->fecha_inicio = $fechaInicio;
     }
 
@@ -98,8 +93,7 @@ class PersonaCargo {
      *
      * @return datetime 
      */
-    public function getFechaInicio()
-    {
+    public function getFechaInicio() {
         return $this->fecha_inicio;
     }
 
@@ -108,8 +102,7 @@ class PersonaCargo {
      *
      * @param datetime $fechaFin
      */
-    public function setFechaFin($fechaFin)
-    {
+    public function setFechaFin($fechaFin) {
         $this->fecha_fin = $fechaFin;
     }
 
@@ -118,8 +111,8 @@ class PersonaCargo {
      *
      * @return datetime 
      */
-    public function getFechaFin()
-    {
+    public function getFechaFin() {
         return $this->fecha_fin;
     }
+
 }

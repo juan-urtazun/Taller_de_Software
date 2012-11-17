@@ -23,6 +23,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 class ConcursoOficina {
 
     /**
+     * @ORM\Id
      * @ORM\Column(type="integer") 
      * @ORM\GeneratedValue
      */

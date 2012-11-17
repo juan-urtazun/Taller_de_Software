@@ -21,17 +21,17 @@
 
 <ul class="record_actions">
     <li>
-        <a href="{{ path('backend_oficina') }}">
+        <a href="{{ path('backend_catedra') }}">
             Volver al listado
         </a>
     </li>
     <li>
-        <a href="{{ path('backend_oficina_edit', { 'id': entity.id }) }}">
+        <a href="{{ path('backend_catedra_edit', { 'id': entity.id }) }}">
             Modificar oficina
         </a>
     </li>
     <li>
-        <form action="{{ path('backend_oficina_delete', { 'id': entity.id }) }}" method="post">
+        <form action="{{ path('backend_catedra_delete', { 'id': entity.id }) }}" method="post">
             {{ form_widget(delete_form) }}
             <button type="submit">Borrar oficina</button>
         </form>

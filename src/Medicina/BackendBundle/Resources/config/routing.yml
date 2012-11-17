@@ -11,3 +11,7 @@ backend_index:
 BackendOficina:
     resource: "@BackendBundle/Resources/config/routing/oficina.yml"
     prefix: /oficina
+    
+BackendCatedra:
+    resource: "@BackendBundle/Resources/config/routing/catedra.yml"
+    prefix: /catedra

@@ -1,6 +1,6 @@
 <?php
 
-namespace  Medicina\KernelBundle\Entity;
+namespace Medicina\KernelBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -12,7 +12,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Resolucion {
 
     /**
-     * @ORM\Column(type="integer") 
+     * @ORM\Id
+     *  @ORM\Column(type="integer") 
      * @ORM\GeneratedValue
      */
     protected $id;
@@ -32,6 +33,7 @@ class Resolucion {
 
     /** @ORM\Column(type="text"), nullable=true) */
     protected $observacion;
+
 //
 //    /** @ORM\ManyToOne(targetEntity="Taller\Kernel\KernelBundle\Entity\Concurso") */
 //    protected $concurso;
@@ -39,14 +41,12 @@ class Resolucion {
 //    /** @ORM\ManyToOne(targetEntity="Taller\Kernel\KernelBundle\Entity\Oficina") */
 //    protected $oficina;
 
-
     /**
      * Set id
      *
      * @param integer $id
      */
-    public function setId($id)
-    {
+    public function setId($id) {
         $this->id = $id;
     }
 
@@ -55,8 +55,7 @@ class Resolucion {
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -65,8 +64,7 @@ class Resolucion {
      *
      * @param date $fecha
      */
-    public function setFecha($fecha)
-    {
+    public function setFecha($fecha) {
         $this->fecha = $fecha;
     }
 
@@ -75,8 +73,7 @@ class Resolucion {
      *
      * @return date 
      */
-    public function getFecha()
-    {
+    public function getFecha() {
         return $this->fecha;
     }
 
@@ -85,8 +82,7 @@ class Resolucion {
      *
      * @param integer $numero
      */
-    public function setNumero($numero)
-    {
+    public function setNumero($numero) {
         $this->numero = $numero;
     }
 
@@ -95,8 +91,7 @@ class Resolucion {
      *
      * @return integer 
      */
-    public function getNumero()
-    {
+    public function getNumero() {
         return $this->numero;
     }
 
@@ -105,8 +100,7 @@ class Resolucion {
      *
      * @param text $observacion
      */
-    public function setObservacion($observacion)
-    {
+    public function setObservacion($observacion) {
         $this->observacion = $observacion;
     }
 
@@ -115,8 +109,8 @@ class Resolucion {
      *
      * @return text 
      */
-    public function getObservacion()
-    {
+    public function getObservacion() {
         return $this->observacion;
     }
+
 }

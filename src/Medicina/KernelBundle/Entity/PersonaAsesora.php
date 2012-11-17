@@ -6,7 +6,7 @@
  * @author juan
  */
 
-namespace  Medicina\KernelBundle\Entity;
+namespace Medicina\KernelBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -18,7 +18,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 class PersonaAsesora {
 
     /**
-     * @ORM\Column(type="integer") 
+     * @ORM\Id
+     *  @ORM\Column(type="integer") 
      * @ORM\GeneratedValue
      */
     protected $id;
@@ -28,14 +29,12 @@ class PersonaAsesora {
 //     * @JoinColumn(name="persona_id", referencedColumnName="id")
 //     * */ protected $tipo;
 
-
     /**
      * Set id
      *
      * @param integer $id
      */
-    public function setId($id)
-    {
+    public function setId($id) {
         $this->id = $id;
     }
 
@@ -44,8 +43,8 @@ class PersonaAsesora {
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
+
 }

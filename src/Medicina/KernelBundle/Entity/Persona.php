@@ -3,7 +3,8 @@
 /**
  * @author juan
  */
-namespace  Medicina\KernelBundle\Entity;
+
+namespace Medicina\KernelBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -14,6 +15,11 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Persona {
 
+    /**
+     * @ORM\Id
+     *  @ORM\Column(type="integer") 
+     * @ORM\GeneratedValue
+     */
     protected $id;
 
     /** @ORM\Column(type="string") */
@@ -46,14 +52,12 @@ class Persona {
 //    /** @ORM\ManyToOne(targetEntity="Taller\Kernel\KernelBundle\Entity\PersonaAsesora") */
 //    protected $asesorias;
 
-
     /**
      * Set email
      *
      * @param string $email
      */
-    public function setEmail($email)
-    {
+    public function setEmail($email) {
         $this->email = $email;
     }
 
@@ -62,8 +66,7 @@ class Persona {
      *
      * @return string 
      */
-    public function getEmail()
-    {
+    public function getEmail() {
         return $this->email;
     }
 
@@ -72,8 +75,7 @@ class Persona {
      *
      * @param string $telefono
      */
-    public function setTelefono($telefono)
-    {
+    public function setTelefono($telefono) {
         $this->telefono = $telefono;
     }
 
@@ -82,8 +84,7 @@ class Persona {
      *
      * @return string 
      */
-    public function getTelefono()
-    {
+    public function getTelefono() {
         return $this->telefono;
     }
 
@@ -92,8 +93,7 @@ class Persona {
      *
      * @param string $nombre
      */
-    public function setNombre($nombre)
-    {
+    public function setNombre($nombre) {
         $this->nombre = $nombre;
     }
 
@@ -102,8 +102,7 @@ class Persona {
      *
      * @return string 
      */
-    public function getNombre()
-    {
+    public function getNombre() {
         return $this->nombre;
     }
 
@@ -112,8 +111,7 @@ class Persona {
      *
      * @param string $apellido
      */
-    public function setApellido($apellido)
-    {
+    public function setApellido($apellido) {
         $this->apellido = $apellido;
     }
 
@@ -122,8 +120,7 @@ class Persona {
      *
      * @return string 
      */
-    public function getApellido()
-    {
+    public function getApellido() {
         return $this->apellido;
     }
 
@@ -132,8 +129,7 @@ class Persona {
      *
      * @param string $dni
      */
-    public function setDni($dni)
-    {
+    public function setDni($dni) {
         $this->dni = $dni;
     }
 
@@ -142,8 +138,7 @@ class Persona {
      *
      * @return string 
      */
-    public function getDni()
-    {
+    public function getDni() {
         return $this->dni;
     }
 
@@ -152,8 +147,7 @@ class Persona {
      *
      * @param string $direccion
      */
-    public function setDireccion($direccion)
-    {
+    public function setDireccion($direccion) {
         $this->direccion = $direccion;
     }
 
@@ -162,8 +156,7 @@ class Persona {
      *
      * @return string 
      */
-    public function getDireccion()
-    {
+    public function getDireccion() {
         return $this->direccion;
     }
 
@@ -172,8 +165,7 @@ class Persona {
      *
      * @param string $codigoPostal
      */
-    public function setCodigoPostal($codigoPostal)
-    {
+    public function setCodigoPostal($codigoPostal) {
         $this->codigoPostal = $codigoPostal;
     }
 
@@ -182,8 +174,8 @@ class Persona {
      *
      * @return string 
      */
-    public function getCodigoPostal()
-    {
+    public function getCodigoPostal() {
         return $this->codigoPostal;
     }
+
 }

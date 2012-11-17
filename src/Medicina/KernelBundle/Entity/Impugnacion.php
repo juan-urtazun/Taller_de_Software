@@ -10,12 +10,14 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
+ * 
  * @ORM\Entity
  * @ORM\Table(name="Impugnacion")
  */
 class Impugnacion {
 
     /**
+     * @ORM\Id
      * @ORM\Column(type="integer") 
      * @ORM\GeneratedValue
      */

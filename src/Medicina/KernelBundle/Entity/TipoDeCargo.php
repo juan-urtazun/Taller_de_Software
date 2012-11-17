@@ -1,6 +1,6 @@
 <?php
 
-namespace  Medicina\KernelBundle\Entity;
+namespace Medicina\KernelBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -11,7 +11,9 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class TipoDeCargo {
 
-    /** @ORM\Column(type="integer") 
+    /**
+     * @ORM\Id
+     *  @ORM\Column(type="integer") 
      * @ORM\GeneratedValue
      */
     protected $id;
@@ -25,14 +27,12 @@ class TipoDeCargo {
     /** @ORM\Column(type="string") */
     protected $codigo;
 
-
     /**
      * Set id
      *
      * @param integer $id
      */
-    public function setId($id)
-    {
+    public function setId($id) {
         $this->id = $id;
     }
 
@@ -41,8 +41,7 @@ class TipoDeCargo {
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -51,8 +50,7 @@ class TipoDeCargo {
      *
      * @param integer $duracion
      */
-    public function setDuracion($duracion)
-    {
+    public function setDuracion($duracion) {
         $this->duracion = $duracion;
     }
 
@@ -61,8 +59,7 @@ class TipoDeCargo {
      *
      * @return integer 
      */
-    public function getDuracion()
-    {
+    public function getDuracion() {
         return $this->duracion;
     }
 
@@ -71,24 +68,20 @@ class TipoDeCargo {
      *
      * @param string $nombre
      */
-    public function setNombre($nombre)
-    {
+    public function setNombre($nombre) {
         $this->nombre = $nombre;
     }
 
-    public function getNombre()
-    {
+    public function getNombre() {
         return $this->nombre;
     }
 
-    
-    public function setCodigo($codigo)
-    {
+    public function setCodigo($codigo) {
         $this->codigo = $codigo;
     }
 
-    public function getCodigo()
-    {
+    public function getCodigo() {
         return $this->codigo;
     }
+
 }

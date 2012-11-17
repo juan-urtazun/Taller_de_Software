@@ -1,7 +1,7 @@
 {% extends '::backend.html.twig' %}
 {% block id 'oficina' %}
 {% block article %}
-<form action="{{ path('backend_oficina_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+<form action="{{ path('backend_catedra_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
     <table class="tablaprincipal">
     <tr class="trtitulopagina">
         <td colspan="3">
@@ -14,19 +14,21 @@
         <td class="tdcuerpo">
             <table class="componentes">
                 {% for child in edit_form.children %}
-                <tr>
-                    <!-- Nombre -->
-                    <td class="col1">
-                    </td>
-                    <td class="col2">
-                       {{ form_label(child) }}
-                    </td>
-                    <td class="col3">
-                        {{ form_widget(child) }}
-                    </td>
-                    <td class="col4">
-                    </td>
-                </tr>
+                    {% if "hidden" not in child.vars.types %}
+                    <tr>
+                        <!-- Nombre -->
+                        <td class="col1">
+                        </td>
+                        <td class="col2">
+                           {{ form_label(child) }}
+                        </td>
+                        <td class="col3">
+                            {{ form_widget(child) }}
+                        </td>
+                        <td class="col4">
+                        </td>
+                    </tr>
+                    {% endif %}
                 {% endfor %}                
             </table>
         </td>
@@ -34,7 +36,7 @@
     <tr class="trbotones">
         <td style="padding-left: 20px;">
             <button class="btnaceptar" type="submit"></button>
-            <a class="btncancelar" href="{{ path('backend_oficina') }}"></a>
+            <a class="btncancelar" href="{{ path('backend_catedra') }}"></a>
         </td>
     </tr>
 </table>
