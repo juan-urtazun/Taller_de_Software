@@ -32,8 +32,14 @@ class Cargo {
 //    /** @ORM\ManyToOne(targetEntity="Taller\Kernel\KernelBundle\Entity\TipoDeCargo") */
 //    protected $tipoCargo;
 //
-//    /** @ORM\ManyToOne(targetEntity="Taller\Kernel\KernelBundle\Entity\Catedra") */
-//    protected $catedra;
+    
+     /**
+     * @ORM\ManyToOne(targetEntity="Medicina\KernelBundle\Entity\Catedra", inversedBy="cargo")
+     * @ORM\JoinColumn(name="catedra_id", referencedColumnName="id")
+     * @return integer
+     */
+    
+    protected $catedra;
 //   
 //    /**
 //     * @ManyToMany(targetEntity="Taller\Kernel\KernelBundle\Entity\Concurso", mappedBy="cargos")

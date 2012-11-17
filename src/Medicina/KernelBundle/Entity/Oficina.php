@@ -1,23 +1,29 @@
 <?php
 
+/**
+ * @author juan
+ */
+
 namespace  Medicina\KernelBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Medicina\KernelBundle\Entity\Oficina
+ * 
+ * @ORM\Entity
+ * @ORM\Table(name="Oficina")
  */
 class Oficina
 {
     /**
-     * @var integer $id
+     * @ORM\Id
+     *  @ORM\Column(type="integer") 
+     * @ORM\GeneratedValue
      */
     private $id;
 
-    /**
-     * @var string $nombre
-     */
+    /** @ORM\Column(type="string", nullable=true) */
     private $nombre;
 
 

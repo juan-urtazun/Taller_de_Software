@@ -12,7 +12,9 @@
     </tr>
     <tr>
         <td class="tdcuerpo">
+            {{ form_widget(form._token) }}
             <table class="componentes">
+                
                 {% for child in form.children %}
                     {% if "hidden" not in child.vars.types %}
                         <tr>

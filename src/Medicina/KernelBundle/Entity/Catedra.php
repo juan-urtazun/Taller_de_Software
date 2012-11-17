@@ -23,14 +23,16 @@ class Catedra {
      */
     protected $id;
 
-    /** @ORM\Column(type="string") */
+    /** @ORM\Column(type="string", nullable=true) */
     protected $codigo;
 
     /** @ORM\Column(type="string") */
     protected $nombre;
     
+    protected $cargo;
 
 
+    
     /**
      * Set id
      *
