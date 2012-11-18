@@ -1,60 +1,100 @@
 <?php
-/**
- * @author juan
- */
 
-
-namespace  Medicina\KernelBundle\Entity;
+namespace Medicina\KernelBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
-
 
 /**
+ * Medicina\KernelBundle\Entity\Concurso
  *
+ * @ORM\Table(name="concurso")
  * @ORM\Entity
- * @ORM\Table(name="Concurso")
  */
 class Concurso {
 
-
-
-/**
- *  @ORM\Id
- *  @ORM\Column(type="integer") 
- * @ORM\GeneratedValue
- */
-protected $id;
-/** @ORM\Column(type="datetime")*/
-protected $fecha_inicio_expediente;
-/** @ORM\Column(type="date"), nullable=true)*/
-protected $fecha_cierre;
-/** @ORM\Column(type="date"), nullable=true)*/
-protected $fecha_inicio_inscripcion;
-/** @ORM\Column(type="date"), nullable=true)*/
-protected $fecha_evaluacion;
-/** @ORM\Column(type="datetime"), nullable=true) */
-protected $fecha_entrega_acta;
-/** @ORM\Column(type="integer") */
-protected $numero_expediente;
-/** @ORM\Column(type="boolean"), nullable=true) */
-protected $cerrado;
-//
-///**
-// * @ORM\ManyToMany(targetEntity="Taller\Kernel\KernelBundle\Entity\Cargo", inversedBy="concursos")
-// * @ORM\JoinTable(name="cargos_concursos")
-// */
-//protected $cargos;
-
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
 
     /**
-     * Set id
+     * @var datetime $fechaInicioExpediente
      *
-     * @param integer $id
+     * @ORM\Column(name="fecha_inicio_expediente", type="datetime", nullable=false)
      */
-    public function setId($id)
-    {
-        $this->id = $id;
+    private $fechaInicioExpediente;
+
+    /**
+     * @var date $fechaCierre
+     *
+     * @ORM\Column(name="fecha_cierre", type="date", nullable=false)
+     */
+    private $fechaCierre;
+
+    /**
+     * @var date $fechaInicioInscripcion
+     *
+     * @ORM\Column(name="fecha_inicio_inscripcion", type="date", nullable=false)
+     */
+    private $fechaInicioInscripcion;
+
+    /**
+     * @var date $fechaEvaluacion
+     *
+     * @ORM\Column(name="fecha_evaluacion", type="date", nullable=false)
+     */
+    private $fechaEvaluacion;
+
+    /**
+     * @var datetime $fechaEntregaActa
+     *
+     * @ORM\Column(name="fecha_entrega_acta", type="datetime", nullable=false)
+     */
+    private $fechaEntregaActa;
+
+    /**
+     * @var integer $numeroExpediente
+     *
+     * @ORM\Column(name="numero_expediente", type="integer", nullable=false)
+     */
+    private $numeroExpediente;
+
+    /**
+     * @var boolean $cerrado
+     *
+     * @ORM\Column(name="cerrado", type="boolean", nullable=false)
+     */
+    private $cerrado;
+
+    /**
+     * @var Oficina
+     *
+     * @ORM\ManyToMany(targetEntity="Oficina", inversedBy="concurso")
+     * @ORM\JoinTable(name="concursooficina",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="concurso_id", referencedColumnName="id")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="oficina_id", referencedColumnName="id")
+     *   }
+     * )
+     */
+    private $oficina;
+
+    /**
+     * @var Persona
+     *
+     * @ORM\ManyToMany(targetEntity="Persona", mappedBy="concurso")
+     */
+    private $persona;
+
+    public function __construct() {
+        $this->oficina = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->persona = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -62,129 +102,116 @@ protected $cerrado;
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
     /**
-     * Set fecha_inicio_expediente
+     * Set fechaInicioExpediente
      *
      * @param datetime $fechaInicioExpediente
      */
-    public function setFechaInicioExpediente($fechaInicioExpediente)
-    {
-        $this->fecha_inicio_expediente = $fechaInicioExpediente;
+    public function setFechaInicioExpediente($fechaInicioExpediente) {
+        $this->fechaInicioExpediente = $fechaInicioExpediente;
     }
 
     /**
-     * Get fecha_inicio_expediente
+     * Get fechaInicioExpediente
      *
      * @return datetime 
      */
-    public function getFechaInicioExpediente()
-    {
-        return $this->fecha_inicio_expediente;
+    public function getFechaInicioExpediente() {
+        return $this->fechaInicioExpediente;
     }
 
     /**
-     * Set fecha_cierre
+     * Set fechaCierre
      *
      * @param date $fechaCierre
      */
-    public function setFechaCierre($fechaCierre)
-    {
-        $this->fecha_cierre = $fechaCierre;
+    public function setFechaCierre($fechaCierre) {
+        $this->fechaCierre = $fechaCierre;
     }
 
     /**
-     * Get fecha_cierre
+     * Get fechaCierre
      *
      * @return date 
      */
-    public function getFechaCierre()
-    {
-        return $this->fecha_cierre;
+    public function getFechaCierre() {
+        return $this->fechaCierre;
     }
 
     /**
-     * Set fecha_inicio_inscripcion
+     * Set fechaInicioInscripcion
      *
      * @param date $fechaInicioInscripcion
      */
-    public function setFechaInicioInscripcion($fechaInicioInscripcion)
-    {
-        $this->fecha_inicio_inscripcion = $fechaInicioInscripcion;
+    public function setFechaInicioInscripcion($fechaInicioInscripcion) {
+        $this->fechaInicioInscripcion = $fechaInicioInscripcion;
     }
 
     /**
-     * Get fecha_inicio_inscripcion
+     * Get fechaInicioInscripcion
      *
      * @return date 
      */
-    public function getFechaInicioInscripcion()
-    {
-        return $this->fecha_inicio_inscripcion;
+    public function getFechaInicioInscripcion() {
+        return $this->fechaInicioInscripcion;
     }
 
     /**
-     * Set fecha_evaluacion
+     * Set fechaEvaluacion
      *
      * @param date $fechaEvaluacion
      */
-    public function setFechaEvaluacion($fechaEvaluacion)
-    {
-        $this->fecha_evaluacion = $fechaEvaluacion;
+    public function setFechaEvaluacion($fechaEvaluacion) {
+        $this->fechaEvaluacion = $fechaEvaluacion;
     }
 
     /**
-     * Get fecha_evaluacion
+     * Get fechaEvaluacion
      *
      * @return date 
      */
-    public function getFechaEvaluacion()
-    {
-        return $this->fecha_evaluacion;
+    public function getFechaEvaluacion() {
+        return $this->fechaEvaluacion;
     }
 
     /**
-     * Set fecha_entrega_acta
+     * Set fechaEntregaActa
      *
      * @param datetime $fechaEntregaActa
      */
-    public function setFechaEntregaActa($fechaEntregaActa)
-    {
-        $this->fecha_entrega_acta = $fechaEntregaActa;
+    public function setFechaEntregaActa($fechaEntregaActa) {
+        $this->fechaEntregaActa = $fechaEntregaActa;
     }
 
     /**
-     * Get fecha_entrega_acta
+     * Get fechaEntregaActa
      *
      * @return datetime 
      */
-    public function getFechaEntregaActa()
-    {
-        return $this->fecha_entrega_acta;
+    public function getFechaEntregaActa() {
+        return $this->fechaEntregaActa;
     }
 
     /**
-     * Set numero_expediente
+     * Set numeroExpediente
      *
      * @param integer $numeroExpediente
      */
-    public function setNumeroExpediente($numeroExpediente)
-    {
-        $this->numero_expediente = $numeroExpediente;
+    public function setNumeroExpediente($numeroExpediente) {
+        $this->numeroExpediente = $numeroExpediente;
     }
 
     /**
-     * Get numero_expediente
+     * Get numeroExpediente
      *
      * @return integer 
      */
-    public function getNumeroExpediente()
-    {
-        return $this->numero_expediente;
+    public function getNumeroExpediente() {
+        return $this->numeroExpediente;
     }
 
     /**
@@ -192,8 +219,7 @@ protected $cerrado;
      *
      * @param boolean $cerrado
      */
-    public function setCerrado($cerrado)
-    {
+    public function setCerrado($cerrado) {
         $this->cerrado = $cerrado;
     }
 
@@ -202,8 +228,44 @@ protected $cerrado;
      *
      * @return boolean 
      */
-    public function getCerrado()
-    {
+    public function getCerrado() {
         return $this->cerrado;
     }
+
+    /**
+     * Add oficina
+     *
+     * @param Medicina\KernelBundle\Entity\Oficina $oficina
+     */
+    public function addOficina(\Medicina\KernelBundle\Entity\Oficina $oficina) {
+        $this->oficina[] = $oficina;
+    }
+
+    /**
+     * Get oficina
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getOficina() {
+        return $this->oficina;
+    }
+
+    /**
+     * Add persona
+     *
+     * @param Medicina\KernelBundle\Entity\Persona $persona
+     */
+    public function addPersona(\Medicina\KernelBundle\Entity\Persona $persona) {
+        $this->persona[] = $persona;
+    }
+
+    /**
+     * Get persona
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getPersona() {
+        return $this->persona;
+    }
+
 }

@@ -1,31 +1,45 @@
 <?php
 
-/**
- * @author juan
- */
-
-namespace  Medicina\KernelBundle\Entity;
+namespace Medicina\KernelBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * 
+ * Medicina\KernelBundle\Entity\Oficina
+ *
+ * @ORM\Table(name="oficina")
  * @ORM\Entity
- * @ORM\Table(name="Oficina")
  */
 class Oficina
 {
     /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     *  @ORM\Column(type="integer") 
-     * @ORM\GeneratedValue
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
-    /** @ORM\Column(type="string", nullable=true) */
+    /**
+     * @var string $nombre
+     *
+     * @ORM\Column(name="nombre", type="string", length=255, nullable=true)
+     */
     private $nombre;
 
+    /**
+     * @var Concurso
+     *
+     * @ORM\ManyToMany(targetEntity="Concurso", mappedBy="oficina")
+     */
+    private $concurso;
+
+    public function __construct()
+    {
+        $this->concurso = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
 
     /**
      * Get id
@@ -55,5 +69,25 @@ class Oficina
     public function getNombre()
     {
         return $this->nombre;
+    }
+
+    /**
+     * Add concurso
+     *
+     * @param Medicina\KernelBundle\Entity\Concurso $concurso
+     */
+    public function addConcurso(\Medicina\KernelBundle\Entity\Concurso $concurso)
+    {
+        $this->concurso[] = $concurso;
+    }
+
+    /**
+     * Get concurso
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getConcurso()
+    {
+        return $this->concurso;
     }
 }

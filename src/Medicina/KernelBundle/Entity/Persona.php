@@ -1,63 +1,129 @@
 <?php
 
-/**
- * @author juan
- */
-
 namespace Medicina\KernelBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
+ * Medicina\KernelBundle\Entity\Persona
+ *
+ * @ORM\Table(name="persona")
  * @ORM\Entity
- * @ORM\Table(name="Persona")
  */
-class Persona {
+class Persona
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
 
     /**
-     * @ORM\Id
-     *  @ORM\Column(type="integer") 
-     * @ORM\GeneratedValue
+     * @var string $email
+     *
+     * @ORM\Column(name="email", type="string", length=255, nullable=false)
      */
-    protected $id;
+    private $email;
 
-    /** @ORM\Column(type="string") */
-    protected $email;
+    /**
+     * @var string $telefono
+     *
+     * @ORM\Column(name="telefono", type="string", length=255, nullable=false)
+     */
+    private $telefono;
 
-    /** @ORM\Column(type="string") */
-    protected $telefono;
+    /**
+     * @var string $nombre
+     *
+     * @ORM\Column(name="nombre", type="string", length=255, nullable=false)
+     */
+    private $nombre;
 
-    /** @ORM\Column(type="string") */
-    protected $nombre;
+    /**
+     * @var string $apellido
+     *
+     * @ORM\Column(name="apellido", type="string", length=255, nullable=false)
+     */
+    private $apellido;
 
-    /** @ORM\Column(type="string") */
-    protected $apellido;
+    /**
+     * @var string $dni
+     *
+     * @ORM\Column(name="dni", type="string", length=255, nullable=false)
+     */
+    private $dni;
 
-    /** @ORM\Column(type="string") */
-    protected $dni;
+    /**
+     * @var string $direccion
+     *
+     * @ORM\Column(name="direccion", type="string", length=255, nullable=false)
+     */
+    private $direccion;
 
-    /** @ORM\Column(type="string") */
-    protected $direccion;
+    /**
+     * @var string $codigopostal
+     *
+     * @ORM\Column(name="codigoPostal", type="string", length=255, nullable=false)
+     */
+    private $codigopostal;
 
-    /** @ORM\Column(type="string") */
-    protected $codigoPostal;
+    /**
+     * @var Concurso
+     *
+     * @ORM\ManyToMany(targetEntity="Concurso", inversedBy="persona")
+     * @ORM\JoinTable(name="inscripcion",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="persona_id", referencedColumnName="id")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="concurso_id", referencedColumnName="id")
+     *   }
+     * )
+     */
+    private $concurso;
 
-//    /** @ORM\OneToMany(targetEntity="Taller\Kernel\KernelBundle\Entity\PersonaCargo" , mappedBy="author_id") */
-//    protected $cargosOcupados;
-//
-//    /** @ORM\ManyToOne(targetEntity="Taller\Kernel\KernelBundle\Entity\Inscripcion") */
-//    protected $inscripciones;
-//
-//    /** @ORM\ManyToOne(targetEntity="Taller\Kernel\KernelBundle\Entity\PersonaAsesora") */
-//    protected $asesorias;
+    /**
+     * @var Cargo
+     *
+     * @ORM\ManyToMany(targetEntity="Cargo", inversedBy="persona")
+     * @ORM\JoinTable(name="personacargo",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="persona_id", referencedColumnName="id")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="cargo_id", referencedColumnName="id")
+     *   }
+     * )
+     */
+    private $cargo;
+
+    public function __construct()
+    {
+        $this->concurso = new \Doctrine\Common\Collections\ArrayCollection();
+    $this->cargo = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Set email
      *
      * @param string $email
      */
-    public function setEmail($email) {
+    public function setEmail($email)
+    {
         $this->email = $email;
     }
 
@@ -66,7 +132,8 @@ class Persona {
      *
      * @return string 
      */
-    public function getEmail() {
+    public function getEmail()
+    {
         return $this->email;
     }
 
@@ -75,7 +142,8 @@ class Persona {
      *
      * @param string $telefono
      */
-    public function setTelefono($telefono) {
+    public function setTelefono($telefono)
+    {
         $this->telefono = $telefono;
     }
 
@@ -84,7 +152,8 @@ class Persona {
      *
      * @return string 
      */
-    public function getTelefono() {
+    public function getTelefono()
+    {
         return $this->telefono;
     }
 
@@ -93,7 +162,8 @@ class Persona {
      *
      * @param string $nombre
      */
-    public function setNombre($nombre) {
+    public function setNombre($nombre)
+    {
         $this->nombre = $nombre;
     }
 
@@ -102,7 +172,8 @@ class Persona {
      *
      * @return string 
      */
-    public function getNombre() {
+    public function getNombre()
+    {
         return $this->nombre;
     }
 
@@ -111,7 +182,8 @@ class Persona {
      *
      * @param string $apellido
      */
-    public function setApellido($apellido) {
+    public function setApellido($apellido)
+    {
         $this->apellido = $apellido;
     }
 
@@ -120,7 +192,8 @@ class Persona {
      *
      * @return string 
      */
-    public function getApellido() {
+    public function getApellido()
+    {
         return $this->apellido;
     }
 
@@ -129,7 +202,8 @@ class Persona {
      *
      * @param string $dni
      */
-    public function setDni($dni) {
+    public function setDni($dni)
+    {
         $this->dni = $dni;
     }
 
@@ -138,7 +212,8 @@ class Persona {
      *
      * @return string 
      */
-    public function getDni() {
+    public function getDni()
+    {
         return $this->dni;
     }
 
@@ -147,7 +222,8 @@ class Persona {
      *
      * @param string $direccion
      */
-    public function setDireccion($direccion) {
+    public function setDireccion($direccion)
+    {
         $this->direccion = $direccion;
     }
 
@@ -156,26 +232,68 @@ class Persona {
      *
      * @return string 
      */
-    public function getDireccion() {
+    public function getDireccion()
+    {
         return $this->direccion;
     }
 
     /**
-     * Set codigoPostal
+     * Set codigopostal
      *
-     * @param string $codigoPostal
+     * @param string $codigopostal
      */
-    public function setCodigoPostal($codigoPostal) {
-        $this->codigoPostal = $codigoPostal;
+    public function setCodigopostal($codigopostal)
+    {
+        $this->codigopostal = $codigopostal;
     }
 
     /**
-     * Get codigoPostal
+     * Get codigopostal
      *
      * @return string 
      */
-    public function getCodigoPostal() {
-        return $this->codigoPostal;
+    public function getCodigopostal()
+    {
+        return $this->codigopostal;
     }
 
+    /**
+     * Add concurso
+     *
+     * @param Medicina\KernelBundle\Entity\Concurso $concurso
+     */
+    public function addConcurso(\Medicina\KernelBundle\Entity\Concurso $concurso)
+    {
+        $this->concurso[] = $concurso;
+    }
+
+    /**
+     * Get concurso
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getConcurso()
+    {
+        return $this->concurso;
+    }
+
+    /**
+     * Add cargo
+     *
+     * @param Medicina\KernelBundle\Entity\Cargo $cargo
+     */
+    public function addCargo(\Medicina\KernelBundle\Entity\Cargo $cargo)
+    {
+        $this->cargo[] = $cargo;
+    }
+
+    /**
+     * Get cargo
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getCargo()
+    {
+        return $this->cargo;
+    }
 }

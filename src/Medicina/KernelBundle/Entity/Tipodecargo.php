@@ -5,12 +5,12 @@ namespace Medicina\KernelBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Medicina\KernelBundle\Entity\Catedra
+ * Medicina\KernelBundle\Entity\Tipodecargo
  *
- * @ORM\Table(name="catedra")
+ * @ORM\Table(name="tipodecargo")
  * @ORM\Entity
  */
-class Catedra
+class Tipodecargo
 {
     /**
      * @var integer $id
@@ -22,11 +22,11 @@ class Catedra
     private $id;
 
     /**
-     * @var string $codigo
+     * @var integer $duracion
      *
-     * @ORM\Column(name="codigo", type="string", length=255, nullable=true)
+     * @ORM\Column(name="duracion", type="integer", nullable=false)
      */
-    private $codigo;
+    private $duracion;
 
     /**
      * @var string $nombre
@@ -34,6 +34,13 @@ class Catedra
      * @ORM\Column(name="nombre", type="string", length=255, nullable=false)
      */
     private $nombre;
+
+    /**
+     * @var string $codigo
+     *
+     * @ORM\Column(name="codigo", type="string", length=255, nullable=false)
+     */
+    private $codigo;
 
 
 
@@ -48,23 +55,23 @@ class Catedra
     }
 
     /**
-     * Set codigo
+     * Set duracion
      *
-     * @param string $codigo
+     * @param integer $duracion
      */
-    public function setCodigo($codigo)
+    public function setDuracion($duracion)
     {
-        $this->codigo = $codigo;
+        $this->duracion = $duracion;
     }
 
     /**
-     * Get codigo
+     * Get duracion
      *
-     * @return string 
+     * @return integer 
      */
-    public function getCodigo()
+    public function getDuracion()
     {
-        return $this->codigo;
+        return $this->duracion;
     }
 
     /**
@@ -85,5 +92,25 @@ class Catedra
     public function getNombre()
     {
         return $this->nombre;
+    }
+
+    /**
+     * Set codigo
+     *
+     * @param string $codigo
+     */
+    public function setCodigo($codigo)
+    {
+        $this->codigo = $codigo;
+    }
+
+    /**
+     * Get codigo
+     *
+     * @return string 
+     */
+    public function getCodigo()
+    {
+        return $this->codigo;
     }
 }

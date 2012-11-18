@@ -1,56 +1,49 @@
 <?php
 
-/**
- * Description of Usuario
- * @author juan
- */
-
 namespace Medicina\KernelBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Medicina\KernelBundle\Entity\Usuario
+ *
+ * @ORM\Table(name="usuario")
  * @ORM\Entity
- * @ORM\Table(name="Usuario")
  */
-class Usuario {
-
+class Usuario
+{
     /**
-     * @ORM\Id
-     *  @ORM\Column(type="integer") 
-     * @ORM\GeneratedValue
-     */
-    protected $id;
-
-    /** @ORM\Column(type="string") */
-    protected $username;
-
-    /** @ORM\Column(type="string") */
-    protected $password;
-
-//    /**
-//     * @ORM\OneToOne(targetEntity="Persona")
-//     * @ORM\JoinColumn(name="persona_id", referencedColumnName="id")
-//     * */
-//    protected $persona;
-
-    /**
-     * Set id
+     * @var integer $id
      *
-     * @param integer $id
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public function setId($id) {
-        $this->id = $id;
-    }
+    private $id;
+
+    /**
+     * @var string $username
+     *
+     * @ORM\Column(name="username", type="string", length=255, nullable=false)
+     */
+    private $username;
+
+    /**
+     * @var string $password
+     *
+     * @ORM\Column(name="password", type="string", length=255, nullable=false)
+     */
+    private $password;
+
+
 
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
@@ -59,7 +52,8 @@ class Usuario {
      *
      * @param string $username
      */
-    public function setUsername($username) {
+    public function setUsername($username)
+    {
         $this->username = $username;
     }
 
@@ -68,7 +62,8 @@ class Usuario {
      *
      * @return string 
      */
-    public function getUsername() {
+    public function getUsername()
+    {
         return $this->username;
     }
 
@@ -77,7 +72,8 @@ class Usuario {
      *
      * @param string $password
      */
-    public function setPassword($password) {
+    public function setPassword($password)
+    {
         $this->password = $password;
     }
 
@@ -86,8 +82,8 @@ class Usuario {
      *
      * @return string 
      */
-    public function getPassword() {
+    public function getPassword()
+    {
         return $this->password;
     }
-
 }

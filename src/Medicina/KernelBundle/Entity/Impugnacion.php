@@ -1,67 +1,65 @@
 <?php
 
-/**
- * @author juan
- */
-
-namespace  Medicina\KernelBundle\Entity;
+namespace Medicina\KernelBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * 
+ * Medicina\KernelBundle\Entity\Impugnacion
+ *
+ * @ORM\Table(name="impugnacion")
  * @ORM\Entity
- * @ORM\Table(name="Impugnacion")
  */
-class Impugnacion {
-
+class Impugnacion
+{
     /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\Column(type="integer") 
-     * @ORM\GeneratedValue
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    protected $id;
-
-    /** @ORM\Column(type="datetime")
-     *
-     *  @Assert\DateTime(message="Debe escribir una fecha de recepci&oacute;n") 
-     */
-    protected $fechaRecibida;
-
-    /** @ORM\Column(type="text"), nullable=true) */
-    protected $observacion;
+    private $id;
 
     /**
-     * @ORM\Column(type="date", nullable=true)
+     * @var datetime $fecharecibida
      *
-     * @Assert\DateTime(message="Debe escribir una fecha valida") 
+     * @ORM\Column(name="fechaRecibida", type="datetime", nullable=false)
      */
-    protected $fecha_expiracion;
+    private $fecharecibida;
 
     /**
-     * @ORM\Column(type="date", nullable=true)
+     * @var text $observacion
      *
-     * @Assert\DateTime(message="Debe escribir una fecha valida") 
+     * @ORM\Column(name="observacion", type="text", nullable=false)
      */
-    protected $fechaResolucion;
-
-//    /** @ORM\ManyToOne(targetEntity="Taller\Kernel\KernelBundle\Entity\Oficina") */
-//    protected $oficina;
-//
-//    /** @ORM\ManyToOne(targetEntity="Taller\Kernel\KernelBundle\Entity\Concurso") */
-//    protected $concurso;
-
+    private $observacion;
 
     /**
-     * Set id
+     * @var date $fechaExpiracion
      *
-     * @param integer $id
+     * @ORM\Column(name="fecha_expiracion", type="date", nullable=true)
      */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
+    private $fechaExpiracion;
+
+    /**
+     * @var date $fecharesolucion
+     *
+     * @ORM\Column(name="fechaResolucion", type="date", nullable=true)
+     */
+    private $fecharesolucion;
+
+    /**
+     * @var Oficina
+     *
+     * @ORM\ManyToOne(targetEntity="Oficina")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="oficina_id", referencedColumnName="id")
+     * })
+     */
+    private $oficina;
+
+
 
     /**
      * Get id
@@ -74,23 +72,23 @@ class Impugnacion {
     }
 
     /**
-     * Set fechaRecibida
+     * Set fecharecibida
      *
-     * @param datetime $fechaRecibida
+     * @param datetime $fecharecibida
      */
-    public function setFechaRecibida($fechaRecibida)
+    public function setFecharecibida($fecharecibida)
     {
-        $this->fechaRecibida = $fechaRecibida;
+        $this->fecharecibida = $fecharecibida;
     }
 
     /**
-     * Get fechaRecibida
+     * Get fecharecibida
      *
      * @return datetime 
      */
-    public function getFechaRecibida()
+    public function getFecharecibida()
     {
-        return $this->fechaRecibida;
+        return $this->fecharecibida;
     }
 
     /**
@@ -114,42 +112,62 @@ class Impugnacion {
     }
 
     /**
-     * Set fecha_expiracion
+     * Set fechaExpiracion
      *
      * @param date $fechaExpiracion
      */
     public function setFechaExpiracion($fechaExpiracion)
     {
-        $this->fecha_expiracion = $fechaExpiracion;
+        $this->fechaExpiracion = $fechaExpiracion;
     }
 
     /**
-     * Get fecha_expiracion
+     * Get fechaExpiracion
      *
      * @return date 
      */
     public function getFechaExpiracion()
     {
-        return $this->fecha_expiracion;
+        return $this->fechaExpiracion;
     }
 
     /**
-     * Set fechaResolucion
+     * Set fecharesolucion
      *
-     * @param date $fechaResolucion
+     * @param date $fecharesolucion
      */
-    public function setFechaResolucion($fechaResolucion)
+    public function setFecharesolucion($fecharesolucion)
     {
-        $this->fechaResolucion = $fechaResolucion;
+        $this->fecharesolucion = $fecharesolucion;
     }
 
     /**
-     * Get fechaResolucion
+     * Get fecharesolucion
      *
      * @return date 
      */
-    public function getFechaResolucion()
+    public function getFecharesolucion()
     {
-        return $this->fechaResolucion;
+        return $this->fecharesolucion;
+    }
+
+    /**
+     * Set oficina
+     *
+     * @param Medicina\KernelBundle\Entity\Oficina $oficina
+     */
+    public function setOficina(\Medicina\KernelBundle\Entity\Oficina $oficina)
+    {
+        $this->oficina = $oficina;
+    }
+
+    /**
+     * Get oficina
+     *
+     * @return Medicina\KernelBundle\Entity\Oficina 
+     */
+    public function getOficina()
+    {
+        return $this->oficina;
     }
 }

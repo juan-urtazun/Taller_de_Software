@@ -3,59 +3,64 @@
 namespace Medicina\KernelBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
+ * Medicina\KernelBundle\Entity\Resolucion
+ *
+ * @ORM\Table(name="resolucion")
  * @ORM\Entity
- * @ORM\Table(name="Resolucion")
  */
-class Resolucion {
-
+class Resolucion
+{
     /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     *  @ORM\Column(type="integer") 
-     * @ORM\GeneratedValue
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    protected $id;
+    private $id;
 
     /**
-     * @ORM\Column(type="date", nullable=true)
+     * @var date $fecha
      *
-     * @Assert\DateTime(message="Debe escribir una fecha valida") 
+     * @ORM\Column(name="fecha", type="date", nullable=true)
      */
-    protected $fecha;
+    private $fecha;
 
     /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank(message="Debe escribir un n&uacute;mero")
-     */
-    protected $numero;
-
-    /** @ORM\Column(type="text"), nullable=true) */
-    protected $observacion;
-
-//
-//    /** @ORM\ManyToOne(targetEntity="Taller\Kernel\KernelBundle\Entity\Concurso") */
-//    protected $concurso;
-//
-//    /** @ORM\ManyToOne(targetEntity="Taller\Kernel\KernelBundle\Entity\Oficina") */
-//    protected $oficina;
-
-    /**
-     * Set id
+     * @var integer $numero
      *
-     * @param integer $id
+     * @ORM\Column(name="numero", type="integer", nullable=false)
      */
-    public function setId($id) {
-        $this->id = $id;
-    }
+    private $numero;
+
+    /**
+     * @var text $observacion
+     *
+     * @ORM\Column(name="observacion", type="text", nullable=false)
+     */
+    private $observacion;
+
+    /**
+     * @var Oficina
+     *
+     * @ORM\ManyToOne(targetEntity="Oficina")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="oficina_id", referencedColumnName="id")
+     * })
+     */
+    private $oficina;
+
+
 
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
@@ -64,7 +69,8 @@ class Resolucion {
      *
      * @param date $fecha
      */
-    public function setFecha($fecha) {
+    public function setFecha($fecha)
+    {
         $this->fecha = $fecha;
     }
 
@@ -73,7 +79,8 @@ class Resolucion {
      *
      * @return date 
      */
-    public function getFecha() {
+    public function getFecha()
+    {
         return $this->fecha;
     }
 
@@ -82,7 +89,8 @@ class Resolucion {
      *
      * @param integer $numero
      */
-    public function setNumero($numero) {
+    public function setNumero($numero)
+    {
         $this->numero = $numero;
     }
 
@@ -91,7 +99,8 @@ class Resolucion {
      *
      * @return integer 
      */
-    public function getNumero() {
+    public function getNumero()
+    {
         return $this->numero;
     }
 
@@ -100,7 +109,8 @@ class Resolucion {
      *
      * @param text $observacion
      */
-    public function setObservacion($observacion) {
+    public function setObservacion($observacion)
+    {
         $this->observacion = $observacion;
     }
 
@@ -109,8 +119,28 @@ class Resolucion {
      *
      * @return text 
      */
-    public function getObservacion() {
+    public function getObservacion()
+    {
         return $this->observacion;
     }
 
+    /**
+     * Set oficina
+     *
+     * @param Medicina\KernelBundle\Entity\Oficina $oficina
+     */
+    public function setOficina(\Medicina\KernelBundle\Entity\Oficina $oficina)
+    {
+        $this->oficina = $oficina;
+    }
+
+    /**
+     * Get oficina
+     *
+     * @return Medicina\KernelBundle\Entity\Oficina 
+     */
+    public function getOficina()
+    {
+        return $this->oficina;
+    }
 }
