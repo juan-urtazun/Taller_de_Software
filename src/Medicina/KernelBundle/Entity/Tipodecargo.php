@@ -38,7 +38,7 @@ class Tipodecargo
     /**
      * @var string $codigo
      *
-     * @ORM\Column(name="codigo", type="string", length=255, nullable=false)
+     * @ORM\Column(name="codigo", type="string", length=255, nullable=true)
      */
     private $codigo;
 

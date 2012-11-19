@@ -15,7 +15,7 @@ class Personaasesora
     /**
      * @var string $tipo
      *
-     * @ORM\Column(name="tipo", type="string", length=45, nullable=true)
+     * @ORM\Column(name="tipo", type="string", length=45, nullable=false)
      */
     private $tipo;
 

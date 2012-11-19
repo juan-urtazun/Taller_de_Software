@@ -1,44 +1,15 @@
 {% extends '::backend.html.twig' %}
-{% block id 'oficina' %}
-{% block article %}
-<form action="{{ path('backend_oficina_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
-    <table class="tablaprincipal">
-    <tr class="trtitulopagina">
-        <td colspan="3">
-            <div>
-               {% block title %}Editar Oficina{% endblock %}
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td class="tdcuerpo">
-            <table class="componentes">
-                {% for child in edit_form.children %}
-                    {% if "hidden" not in child.vars.types %}
-                    <tr>
-                        <!-- Nombre -->
-                        <td class="col1">
-                        </td>
-                        <td class="col2">
-                           {{ form_label(child) }}
-                        </td>
-                        <td class="col3">
-                            {{ form_widget(child) }}
-                        </td>
-                        <td class="col4">
-                        </td>
-                    </tr>
-                    {% endif %}
-                {% endfor %}                
-            </table>
-        </td>
-    </tr>
-    <tr class="trbotones">
-        <td style="padding-left: 20px;">
-            <button class="btnaceptar" type="submit"></button>
-            <a class="btncancelar" href="{{ path('backend_oficina') }}"></a>
-        </td>
-    </tr>
-</table>
-</form>
+{% block titulo %}
+    <h1>Editar Oficina</h1>
+{% endblock %}
+{% block contenido %}
+<form action="{{ path('oficina_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(form) }}>
+    <div class="divinterna">  
+    {{ form_widget(form) }}
+     </div>
+    <div class="divbotones">
+        <button class="btnaceptar" type="submit"></button>
+        <button class="btncancelar" type="button"  onclick='window.location.href = "{{ path('oficina')}}"'></button>
+    </div>
+</form> 
 {% endblock %}

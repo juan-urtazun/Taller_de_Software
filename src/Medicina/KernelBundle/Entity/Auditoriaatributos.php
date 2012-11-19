@@ -24,21 +24,21 @@ class Auditoriaatributos
     /**
      * @var string $valoranterior
      *
-     * @ORM\Column(name="valoranterior", type="string", length=45, nullable=true)
+     * @ORM\Column(name="valoranterior", type="string", length=45, nullable=false)
      */
     private $valoranterior;
 
     /**
      * @var string $valoractual
      *
-     * @ORM\Column(name="valoractual", type="string", length=45, nullable=true)
+     * @ORM\Column(name="valoractual", type="string", length=45, nullable=false)
      */
     private $valoractual;
 
     /**
      * @var string $nombreatributo
      *
-     * @ORM\Column(name="nombreatributo", type="string", length=45, nullable=true)
+     * @ORM\Column(name="nombreatributo", type="string", length=45, nullable=false)
      */
     private $nombreatributo;
 

@@ -1,30 +1,30 @@
-backend_oficina:
+oficina:
     pattern:  /
     defaults: { _controller: "BackendBundle:Oficina:index" }
 
-backend_oficina_show:
+oficina_show:
     pattern:  /{id}/show
     defaults: { _controller: "BackendBundle:Oficina:show" }
 
-backend_oficina_new:
+oficina_new:
     pattern:  /new
     defaults: { _controller: "BackendBundle:Oficina:new" }
 
-backend_oficina_create:
+oficina_create:
     pattern:  /create
     defaults: { _controller: "BackendBundle:Oficina:create" }
     requirements: { _method: post }
 
-backend_oficina_edit:
+oficina_edit:
     pattern:  /{id}/edit
     defaults: { _controller: "BackendBundle:Oficina:edit" }
 
-backend_oficina_update:
+oficina_update:
     pattern:  /{id}/update
     defaults: { _controller: "BackendBundle:Oficina:update" }
     requirements: { _method: post }
 
-backend_oficina_delete:
+oficina_delete:
     pattern:  /{id}/delete
     defaults: { _controller: "BackendBundle:Oficina:delete" }
     requirements: { _method: post }

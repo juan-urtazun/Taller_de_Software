@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="concurso")
  * @ORM\Entity
  */
-class Concurso {
-
+class Concurso
+{
     /**
      * @var integer $id
      *
@@ -31,7 +31,7 @@ class Concurso {
     /**
      * @var date $fechaCierre
      *
-     * @ORM\Column(name="fecha_cierre", type="date", nullable=false)
+     * @ORM\Column(name="fecha_cierre", type="date", nullable=true)
      */
     private $fechaCierre;
 
@@ -45,14 +45,14 @@ class Concurso {
     /**
      * @var date $fechaEvaluacion
      *
-     * @ORM\Column(name="fecha_evaluacion", type="date", nullable=false)
+     * @ORM\Column(name="fecha_evaluacion", type="date", nullable=true)
      */
     private $fechaEvaluacion;
 
     /**
      * @var datetime $fechaEntregaActa
      *
-     * @ORM\Column(name="fecha_entrega_acta", type="datetime", nullable=false)
+     * @ORM\Column(name="fecha_entrega_acta", type="datetime", nullable=true)
      */
     private $fechaEntregaActa;
 
@@ -66,7 +66,7 @@ class Concurso {
     /**
      * @var boolean $cerrado
      *
-     * @ORM\Column(name="cerrado", type="boolean", nullable=false)
+     * @ORM\Column(name="cerrado", type="boolean", nullable=true)
      */
     private $cerrado;
 
@@ -92,17 +92,20 @@ class Concurso {
      */
     private $persona;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->oficina = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->persona = new \Doctrine\Common\Collections\ArrayCollection();
+    $this->persona = new \Doctrine\Common\Collections\ArrayCollection();
     }
+    
 
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
@@ -111,7 +114,8 @@ class Concurso {
      *
      * @param datetime $fechaInicioExpediente
      */
-    public function setFechaInicioExpediente($fechaInicioExpediente) {
+    public function setFechaInicioExpediente($fechaInicioExpediente)
+    {
         $this->fechaInicioExpediente = $fechaInicioExpediente;
     }
 
@@ -120,7 +124,8 @@ class Concurso {
      *
      * @return datetime 
      */
-    public function getFechaInicioExpediente() {
+    public function getFechaInicioExpediente()
+    {
         return $this->fechaInicioExpediente;
     }
 
@@ -129,7 +134,8 @@ class Concurso {
      *
      * @param date $fechaCierre
      */
-    public function setFechaCierre($fechaCierre) {
+    public function setFechaCierre($fechaCierre)
+    {
         $this->fechaCierre = $fechaCierre;
     }
 
@@ -138,7 +144,8 @@ class Concurso {
      *
      * @return date 
      */
-    public function getFechaCierre() {
+    public function getFechaCierre()
+    {
         return $this->fechaCierre;
     }
 
@@ -147,7 +154,8 @@ class Concurso {
      *
      * @param date $fechaInicioInscripcion
      */
-    public function setFechaInicioInscripcion($fechaInicioInscripcion) {
+    public function setFechaInicioInscripcion($fechaInicioInscripcion)
+    {
         $this->fechaInicioInscripcion = $fechaInicioInscripcion;
     }
 
@@ -156,7 +164,8 @@ class Concurso {
      *
      * @return date 
      */
-    public function getFechaInicioInscripcion() {
+    public function getFechaInicioInscripcion()
+    {
         return $this->fechaInicioInscripcion;
     }
 
@@ -165,7 +174,8 @@ class Concurso {
      *
      * @param date $fechaEvaluacion
      */
-    public function setFechaEvaluacion($fechaEvaluacion) {
+    public function setFechaEvaluacion($fechaEvaluacion)
+    {
         $this->fechaEvaluacion = $fechaEvaluacion;
     }
 
@@ -174,7 +184,8 @@ class Concurso {
      *
      * @return date 
      */
-    public function getFechaEvaluacion() {
+    public function getFechaEvaluacion()
+    {
         return $this->fechaEvaluacion;
     }
 
@@ -183,7 +194,8 @@ class Concurso {
      *
      * @param datetime $fechaEntregaActa
      */
-    public function setFechaEntregaActa($fechaEntregaActa) {
+    public function setFechaEntregaActa($fechaEntregaActa)
+    {
         $this->fechaEntregaActa = $fechaEntregaActa;
     }
 
@@ -192,7 +204,8 @@ class Concurso {
      *
      * @return datetime 
      */
-    public function getFechaEntregaActa() {
+    public function getFechaEntregaActa()
+    {
         return $this->fechaEntregaActa;
     }
 
@@ -201,7 +214,8 @@ class Concurso {
      *
      * @param integer $numeroExpediente
      */
-    public function setNumeroExpediente($numeroExpediente) {
+    public function setNumeroExpediente($numeroExpediente)
+    {
         $this->numeroExpediente = $numeroExpediente;
     }
 
@@ -210,7 +224,8 @@ class Concurso {
      *
      * @return integer 
      */
-    public function getNumeroExpediente() {
+    public function getNumeroExpediente()
+    {
         return $this->numeroExpediente;
     }
 
@@ -219,7 +234,8 @@ class Concurso {
      *
      * @param boolean $cerrado
      */
-    public function setCerrado($cerrado) {
+    public function setCerrado($cerrado)
+    {
         $this->cerrado = $cerrado;
     }
 
@@ -228,7 +244,8 @@ class Concurso {
      *
      * @return boolean 
      */
-    public function getCerrado() {
+    public function getCerrado()
+    {
         return $this->cerrado;
     }
 
@@ -237,7 +254,8 @@ class Concurso {
      *
      * @param Medicina\KernelBundle\Entity\Oficina $oficina
      */
-    public function addOficina(\Medicina\KernelBundle\Entity\Oficina $oficina) {
+    public function addOficina(\Medicina\KernelBundle\Entity\Oficina $oficina)
+    {
         $this->oficina[] = $oficina;
     }
 
@@ -246,7 +264,8 @@ class Concurso {
      *
      * @return Doctrine\Common\Collections\Collection 
      */
-    public function getOficina() {
+    public function getOficina()
+    {
         return $this->oficina;
     }
 
@@ -255,7 +274,8 @@ class Concurso {
      *
      * @param Medicina\KernelBundle\Entity\Persona $persona
      */
-    public function addPersona(\Medicina\KernelBundle\Entity\Persona $persona) {
+    public function addPersona(\Medicina\KernelBundle\Entity\Persona $persona)
+    {
         $this->persona[] = $persona;
     }
 
@@ -264,8 +284,8 @@ class Concurso {
      *
      * @return Doctrine\Common\Collections\Collection 
      */
-    public function getPersona() {
+    public function getPersona()
+    {
         return $this->persona;
     }
-
 }

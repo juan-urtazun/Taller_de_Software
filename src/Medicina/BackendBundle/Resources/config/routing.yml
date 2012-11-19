@@ -15,3 +15,7 @@ BackendOficina:
 BackendCatedra:
     resource: "@BackendBundle/Resources/config/routing/catedra.yml"
     prefix: /catedra
+    
+BackendTipodecargo:
+    resource: "@BackendBundle/Resources/config/routing/tipodecargo.yml"
+    prefix: /tipodecargo

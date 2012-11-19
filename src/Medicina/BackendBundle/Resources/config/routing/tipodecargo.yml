@@ -1,0 +1,30 @@
+tipocargo:
+    pattern:  /
+    defaults: { _controller: "BackendBundle:Tipodecargo:index" }
+
+tipocargo_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BackendBundle:Tipodecargo:show" }
+
+tipocargo_new:
+    pattern:  /new
+    defaults: { _controller: "BackendBundle:Tipodecargo:new" }
+
+tipocargo_create:
+    pattern:  /create
+    defaults: { _controller: "BackendBundle:Tipodecargo:create" }
+    requirements: { _method: post }
+
+tipocargo_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BackendBundle:Tipodecargo:edit" }
+
+tipocargo_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BackendBundle:Tipodecargo:update" }
+    requirements: { _method: post }
+
+tipocargo_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BackendBundle:Tipodecargo:delete" }
+    requirements: { _method: post }

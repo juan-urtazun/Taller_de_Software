@@ -38,7 +38,7 @@ class Cargo
     /**
      * @var string $tipoDeDedicacion
      *
-     * @ORM\Column(name="tipo_de_dedicacion", type="string", length=255, nullable=true)
+     * @ORM\Column(name="tipo_de_dedicacion", type="string", length=255, nullable=false)
      */
     private $tipoDeDedicacion;
 

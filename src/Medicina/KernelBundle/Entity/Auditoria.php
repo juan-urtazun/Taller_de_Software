@@ -24,28 +24,28 @@ class Auditoria
     /**
      * @var string $tablename
      *
-     * @ORM\Column(name="tablename", type="string", length=50, nullable=true)
+     * @ORM\Column(name="tablename", type="string", length=50, nullable=false)
      */
     private $tablename;
 
     /**
      * @var integer $tuplaId
      *
-     * @ORM\Column(name="tupla_id", type="integer", nullable=true)
+     * @ORM\Column(name="tupla_id", type="integer", nullable=false)
      */
     private $tuplaId;
 
     /**
      * @var string $tipoactividad
      *
-     * @ORM\Column(name="tipoactividad", type="string", length=1, nullable=true)
+     * @ORM\Column(name="tipoactividad", type="string", length=1, nullable=false)
      */
     private $tipoactividad;
 
     /**
      * @var datetime $fecha
      *
-     * @ORM\Column(name="fecha", type="datetime", nullable=true)
+     * @ORM\Column(name="fecha", type="datetime", nullable=false)
      */
     private $fecha;
 

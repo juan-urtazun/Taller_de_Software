@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Sistema de Concursos Docentes{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
         {% block javascripts %}{% endblock %}
@@ -37,8 +37,8 @@
                                     <a href="#" class="menuboton2">Oficina</a>
                                     <div class="sub">
                                         <ul>
-                                            <li><a href="{{ path('backend_oficina_new') }}">Alta</a></li>
-                                            <li><a href="{{ path('backend_oficina') }}">Administración</a></li>
+                                            <li><a href="{{ path('oficina_new') }}">Alta</a></li>
+                                            <li><a href="{{ path('oficina') }}">Administración</a></li>
                                         </ul>
                                     </div>
                                 </li>
@@ -87,10 +87,9 @@
                         <!-- INICIO. TD MEDIO -->
                         <td class="tdmed">
                             <!-- INICIO. CONTENT MASTER -->
-                            <div class="divinterna">      
-                                {% block body %}{% endblock %}
-                                </div>
-                                <!-- INICIO. CONTENT MASTER -->
+                            {% block titulo %}{% endblock %}
+                            {% block body %}{% endblock %}
+                            <!-- INICIO. CONTENT MASTER -->
                             </td>
                             <!-- FIN. TD MEDIO -->
                             <td class="b3"></td>

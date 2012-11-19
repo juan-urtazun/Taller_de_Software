@@ -24,7 +24,7 @@ class Resolucion
     /**
      * @var date $fecha
      *
-     * @ORM\Column(name="fecha", type="date", nullable=true)
+     * @ORM\Column(name="fecha", type="date", nullable=false)
      */
     private $fecha;
 
@@ -38,7 +38,7 @@ class Resolucion
     /**
      * @var text $observacion
      *
-     * @ORM\Column(name="observacion", type="text", nullable=false)
+     * @ORM\Column(name="observacion", type="text", nullable=true)
      */
     private $observacion;
 

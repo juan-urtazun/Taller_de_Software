@@ -35,7 +35,7 @@ class CatedraController extends Controller {
         $entity = $em->getRepository('MedicinaKernelBundle:Catedra')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('No se ha encontrado la oficina solicitada');
+            throw $this->createNotFoundException('No se ha encontrado la catedra solicitada');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -75,7 +75,7 @@ class CatedraController extends Controller {
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('backend_oficina', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('catedra', array('id' => $entity->getId())));
         }
 
         return $this->render('BackendBundle:Catedra:new.html.twig', array(
@@ -94,7 +94,7 @@ class CatedraController extends Controller {
         $entity = $em->getRepository('MedicinaKernelBundle:Catedra')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('No se ha encontrado la oficina solicitada');
+            throw $this->createNotFoundException('No se ha encontrado la catedra solicitada');
         }
 
         $editForm = $this->createForm(new CatedraType(), $entity);
@@ -115,7 +115,7 @@ class CatedraController extends Controller {
         $entity = $em->getRepository('MedicinaKernelBundle:Catedra')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('No se ha encontrado la oficina solicitada');
+            throw $this->createNotFoundException('No se ha encontrado la catedra solicitada');
         }
 
         $editForm = $this->createForm(new CatedraType(), $entity);
@@ -129,7 +129,7 @@ class CatedraController extends Controller {
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('backend_oficina', array('id' => $id)));
+            return $this->redirect($this->generateUrl('catedra', array('id' => $id)));
         }
 
         return $this->render('BackendBundle:Catedra:edit.html.twig', array(
@@ -154,14 +154,14 @@ class CatedraController extends Controller {
             $entity = $em->getRepository('MedicinaKernelBundle:Catedra')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('No se ha encontrado la oficina solicitada');
+                throw $this->createNotFoundException('No se ha encontrado la catedra solicitada');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('backend_oficina'));
+        return $this->redirect($this->generateUrl('catedra'));
     }
 
     private function createDeleteForm($id) {
@@ -170,11 +170,4 @@ class CatedraController extends Controller {
                         ->getForm()
         ;
     }
-
-    
-    
-    private function getDefaultsValuesForTwig() {
-       return array('name'=>'Catedra');
-        
-    }
-    }
+}

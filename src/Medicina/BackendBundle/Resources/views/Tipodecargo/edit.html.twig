@@ -1,0 +1,17 @@
+{% extends '::backend.html.twig' %}
+{% block id 'tipodecargo' %}
+{% block titulo %}
+    <h1>Editar Tipo de Cargo</h1>
+{% endblock %}
+{% block contenido %}
+
+<form action="{{ path('tipocargo_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+    <div class="divinterna">  
+        {{ form_widget(edit_form) }}
+    </div>
+    <div class="divbotones">
+        <button class="btnaceptar" type="submit"></button>
+        <button class="btncancelar" type="button"  onclick='window.location.href = "{{ path('tipocargo')}}"'></button>
+    </div>
+</form>        
+{% endblock %}

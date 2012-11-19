@@ -31,7 +31,7 @@ class Impugnacion
     /**
      * @var text $observacion
      *
-     * @ORM\Column(name="observacion", type="text", nullable=false)
+     * @ORM\Column(name="observacion", type="text", nullable=true)
      */
     private $observacion;
 
@@ -45,7 +45,7 @@ class Impugnacion
     /**
      * @var date $fecharesolucion
      *
-     * @ORM\Column(name="fechaResolucion", type="date", nullable=true)
+     * @ORM\Column(name="fechaResolucion", type="date", nullable=false)
      */
     private $fecharesolucion;
 

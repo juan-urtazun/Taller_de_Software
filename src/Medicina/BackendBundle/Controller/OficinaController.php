@@ -75,7 +75,7 @@ class OficinaController extends Controller {
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('backend_oficina', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('oficina', array('id' => $entity->getId())));
         }
 
         return $this->render('BackendBundle:Oficina:new.html.twig', array(
@@ -101,7 +101,7 @@ class OficinaController extends Controller {
 
         return $this->render('BackendBundle:Oficina:edit.html.twig', array(
                     'entity' => $entity,
-                    'edit_form' => $editForm->createView(),
+                    'form' => $editForm->createView(),
                 ));
     }
 
@@ -129,12 +129,12 @@ class OficinaController extends Controller {
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('backend_oficina', array('id' => $id)));
+            return $this->redirect($this->generateUrl('oficina', array('id' => $id)));
         }
 
         return $this->render('BackendBundle:Oficina:edit.html.twig', array(
                     'entity' => $entity,
-                    'edit_form' => $editForm->createView(),
+                    'form' => $editForm->createView(),
                     'delete_form' => $deleteForm->createView(),
                 ));
     }
@@ -161,7 +161,7 @@ class OficinaController extends Controller {
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('backend_oficina'));
+        return $this->redirect($this->generateUrl('oficina'));
     }
 
     private function createDeleteForm($id) {

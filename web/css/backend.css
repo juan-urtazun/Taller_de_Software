@@ -40,7 +40,8 @@ textarea {resize: none;}
 /*tabla medio e inferior*/
 .b1{background-image: url(../images/bordes/izq.png);background-repeat: repeat-y;width:6px;background-color: transparent;}
 .tdmed{width: 899px;vertical-align: top;background-color: #fff;}
-.divinterna{padding-top: 1px;}
+.divinterna{padding: 10px 20px 20px;}
+.tdmed h1 {color: #395E7B; font-family: Arial; font-size: 13pt; font-weight: bolder; padding-left: 30px;background-color: #D8E1E6; height: 40px; padding-top: 15px; margin-bottom: 15px;}
 .b3{background-image: url(../images/bordes/der.png);background-repeat: repeat-y;width:6px;background-color: transparent;}
 .c1{background-image: url(../images/bordes/botizq.png);background-repeat: no-repeat;width: 6px;height: 6px;background-color: transparent;}
 .c2{background-image: url(../images/bordes/bot.png);background-repeat: repeat-x;width: 899px;height: 6px;background-color: transparent;}
@@ -114,7 +115,7 @@ ul#itemsbarrasesion .sub ul li a:hover{color: #fff;text-decoration: underline;ba
 .trtitulopagina{background-color:#d8e1e6;height:60px;padding-bottom:15px;}
 .trtitulopagina div{padding-left: 30px;font-family: Arial;color: #395e7b;font-size: 13pt;font-weight: bolder;}
 .tdcuerpo{padding-top:15px;padding-bottom:15px;}
-.tdcuerpomargen{padding:10px 20px 20px 20px;}
+.tdcuerpomargen{padding:20px 20px 20px 0px;}
 .componentes, .componentes tbody{width:100%;margin: 0 auto;border-collapse: collapse;}
 .componentesAux, .componentesAux tbody{width:100%;margin: 0 auto;border-collapse: collapse;}
 .componentes td{padding-top:10px;padding-bottom:10px;}
@@ -124,8 +125,7 @@ ul#itemsbarrasesion .sub ul li a:hover{color: #fff;text-decoration: underline;ba
 .col3{padding-left:10px;padding-right:10px;border-bottom: #dedede 1pt dashed;border-top: #dedede 1pt dashed;font-family: Arial;color: #808080;font-size: 10pt;}
 .contxtar div{float:left; color:#000}
 .colAux{border-bottom: #dedede 1pt dashed;font-family: Arial;color: #808080;font-size: 10pt;}
-.trbotones{background-color:#d8e1e6;height:60px;}
-.trbotones td{text-align:center;}
+.divbotones{background-color:#d8e1e6;height:45px; text-align:center; padding-top: 15px;}
 .trbotonesPOP{height:60px;}
 .trbotonesPOP td{text-align:center;}
 .trbotonesPOP td input{float:right;}
@@ -146,29 +146,22 @@ ul#itemsbarrasesion .sub ul li a:hover{color: #fff;text-decoration: underline;ba
 .divinterna select:focus{outline:#99ddff solid 2px}
 .divinterna option{padding-top:5px;font-size:12px;font-weight:bold;cursor:pointer;}
 
-
+.divinterna > div > div {border-bottom: #dedede 1pt dashed;border-top: #dedede 1pt dashed}
+form label {margin-right: 15px; text-align:right;font-style:italic;background-color: #f3f6f7;width: 200px;padding: 10px;font-family: Arial;color: #808080;font-size: 10pt;font-weight: bold;display: inline-block; }
 /*//////////////////////////////////////////////////////*/
 /*/// GRILLAS //////////////////////////////////////////*/
 /*//////////////////////////////////////////////////////*/
-table.GrillaNormal {width:100%;border-collapse:collapse;font-size:12px;font-family:Verdana;}
-table.GrillaNormal .GrillaHead th{padding:10px 15px 5px 15px;color: #395e7b;border-bottom: 1px solid #60add0;}
-table.GrillaNormal .thLeft{text-align:left;}
-table.GrillaNormal .GrillaRow {background-color:#e8edef;border:0;}
-table.GrillaNormal .GrillaRowAlt {background-color:#d8e1e6;border:0;}
-table.GrillaNormal .GrillaRow:hover,
-table.GrillaNormal .GrillaRowAlt:hover {background-color:#abd1ef;border:0;}
-table.GrillaNormal .GrillaRow td, 
-table.GrillaNormal .GrillaRowAlt td {padding:15px;}
-table.GrillaNormal tr.trsubGrilla .GrillaHead th{background-color:#fff;}
-/*SubGrillaNormal*/
-table.subGrillaNormal {width:100%;border-collapse:collapse;font-size:12px;font-family:Verdana;}
-table.subGrillaNormal .GrillaHead th{padding:10px 15px 5px 15px;color: #395e7b;border-bottom: 1px solid #fff;}
-table.subGrillaNormal .thLeft{text-align:left;}
-table.subGrillaNormal .GrillaRow,
-table.subGrillaNormal .GrillaRowAlt {background-color:#fff;border:0;}
-table.subGrillaNormal .GrillaRow td, 
-table.subGrillaNormal .GrillaRowAlt td {padding:10px 15px 10px 15px;}
-table.subGrillaNormal td img {width:15px; height:15px;}
+.records_list {width:100%;border-collapse:collapse;font-size:12px;font-family:Verdana; text-align:left;}
+.records_list thead {color: #395e7b;border-bottom: 1px solid #60add0;}
+.records_list  thead tr th {padding:10px 15px 5px 15px;}
+.records_list .GrillaRow {background-color:#e8edef;border:0;}
+.records_list .GrillaRowAlt {background-color:#d8e1e6;border:0;}
+.records_list .GrillaRow:hover,
+.records_list .GrillaRowAlt:hover {background-color:#abd1ef;border:0;}
+.records_list .GrillaRow td, 
+.records_list .GrillaRowAlt td {padding:15px;}
+.records_list tr.trsubGrilla .GrillaHead th{background-color:#fff;}
+
 /*Paginación*/
 .Pag_GrillaNormal{border-top: 1px solid #60add0;font-family:verdana;} 
 .Pag_GrillaNormal td{padding:5px 2px 2px 2px;}
@@ -182,9 +175,9 @@ table.subGrillaNormal td img {width:15px; height:15px;}
 /*//////////////////////////////////////////////////////*/
 .btnOficinaNew { display: block; height: 34px; width: 142px; background: transparent url(../images/btn/oficinaNew.png) no-repeat scroll left top;margin-right:5px;border:none;cursor:pointer;}
 .btnOficinaNew:hover{background-position:left -34px;}
-.btnaceptar{ float: left; height: 34px;width: 96px;background: transparent url(../images/btn/aceptar.png) no-repeat scroll left top;margin-right:5px;border:none;cursor:pointer;}
+.btnaceptar{ height: 34px;width: 96px;background: transparent url(../images/btn/aceptar.png) no-repeat scroll left top;margin-right:5px;border:none;cursor:pointer;}
 .btnaceptar:hover{background-position:left -34px;}
-.btncancelar{ float: left; display: block; height: 34px;width: 96px;background: transparent url(../images/btn/cancelar.png) no-repeat scroll left top;margin-right:5px;border:none;cursor:pointer;}
+.btncancelar {height: 34px;width: 96px;background: transparent url(../images/btn/cancelar.png) no-repeat scroll left top;margin-right:5px;border:none;cursor:pointer;}
 .btncancelar:hover{background-position:left -34px;}
 input.btnguardar{height: 34px;width: 96px;background: transparent url(../images/btn/guardar.png) no-repeat scroll left top;margin-right:5px;border:none;cursor:pointer;}
 input.btnguardar:hover{background-position:left -34px;}

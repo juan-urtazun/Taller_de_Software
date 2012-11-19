@@ -1,0 +1,16 @@
+{% extends '::backend.html.twig' %}
+{% block id 'tipodecargo' %}
+{% block titulo %}
+    <h1>Nuevo Tipo de Cargo</h1>
+{% endblock %}
+{% block contenido %}
+<form action="{{ path('tipocargo_create') }}" method="post" {{ form_enctype(form) }}>
+    <div class="divinterna">  
+        {{ form_widget(form) }}
+     </div>
+    <div class="divbotones">
+        <button class="btnaceptar" type="submit"></button>
+        <button class="btncancelar" type="button"  onclick='window.location.href = "{{ path('oficina')}}"'></button>
+    </div>
+</form>        
+{% endblock %}
