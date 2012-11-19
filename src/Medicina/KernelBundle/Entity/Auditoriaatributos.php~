@@ -1,0 +1,57 @@
+<?php
+
+namespace Medicina\KernelBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Medicina\KernelBundle\Entity\Auditoriaatributos
+ *
+ * @ORM\Table(name="auditoriaatributos")
+ * @ORM\Entity
+ */
+class Auditoriaatributos
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string $valoranterior
+     *
+     * @ORM\Column(name="valoranterior", type="string", length=45, nullable=false)
+     */
+    private $valoranterior;
+
+    /**
+     * @var string $valoractual
+     *
+     * @ORM\Column(name="valoractual", type="string", length=45, nullable=false)
+     */
+    private $valoractual;
+
+    /**
+     * @var string $nombreatributo
+     *
+     * @ORM\Column(name="nombreatributo", type="string", length=45, nullable=false)
+     */
+    private $nombreatributo;
+
+    /**
+     * @var Auditoria
+     *
+     * @ORM\ManyToOne(targetEntity="Auditoria")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="auditoria_id", referencedColumnName="id"),
+     *   @ORM\JoinColumn(name="auditoria_usuario_id", referencedColumnName="usuario_id")
+     * })
+     */
+    private $auditoria;
+
+
+}

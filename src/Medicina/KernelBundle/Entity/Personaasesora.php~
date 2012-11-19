@@ -1,0 +1,35 @@
+<?php
+
+namespace Medicina\KernelBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Medicina\KernelBundle\Entity\Personaasesora
+ *
+ * @ORM\Table(name="personaasesora")
+ * @ORM\Entity
+ */
+class Personaasesora
+{
+    /**
+     * @var string $tipo
+     *
+     * @ORM\Column(name="tipo", type="string", length=45, nullable=false)
+     */
+    private $tipo;
+
+    /**
+     * @var Persona
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="Persona")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="persona_id", referencedColumnName="id")
+     * })
+     */
+    private $persona;
+
+
+}

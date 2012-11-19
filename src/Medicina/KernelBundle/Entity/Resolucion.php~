@@ -1,0 +1,56 @@
+<?php
+
+namespace Medicina\KernelBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Medicina\KernelBundle\Entity\Resolucion
+ *
+ * @ORM\Table(name="resolucion")
+ * @ORM\Entity
+ */
+class Resolucion
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var date $fecha
+     *
+     * @ORM\Column(name="fecha", type="date", nullable=false)
+     */
+    private $fecha;
+
+    /**
+     * @var integer $numero
+     *
+     * @ORM\Column(name="numero", type="integer", nullable=false)
+     */
+    private $numero;
+
+    /**
+     * @var text $observacion
+     *
+     * @ORM\Column(name="observacion", type="text", nullable=true)
+     */
+    private $observacion;
+
+    /**
+     * @var Oficina
+     *
+     * @ORM\ManyToOne(targetEntity="Oficina")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="oficina_id", referencedColumnName="id")
+     * })
+     */
+    private $oficina;
+
+
+}
