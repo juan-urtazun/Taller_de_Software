@@ -1,16 +1,15 @@
-<h1>Agregar Persona</h1>
-
+{% extends '::backend.html.twig' %}
+{% block id 'oficina' %}
+{% block titulo %}
+<h1>Nueva Persona</h1>
+{% endblock %}
+{% block contenido %}
 <form action="{{ path('persona_create') }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
-    <p>
-        <button type="submit">Crear</button>
-    </p>
-</form>
-
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('persona') }}">
-            Volver
-        </a>
-    </li>
-</ul>
+    <div class="divinterna">  
+        {{ form_widget(form) }}
+        </div>
+        <div class="divbotones">
+            <button class="btnaceptar" type="submit"></button>
+            <button class="btncancelar" type="button"  onclick='window.location.href = "{{ path('persona')}}"'></button>
+        </div>
+  {% endblock %}

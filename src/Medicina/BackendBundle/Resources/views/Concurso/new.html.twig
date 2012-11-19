@@ -1,26 +1,18 @@
 {% extends '::backend.html.twig' %}
 {% block id 'oficina' %}
 {% block titulo %}
-<h1>Listado de Oficinas</h1>
+<h1>Crear Concurso</h1>
 {% endblock %}
 {% block contenido %}
 <div class="divinterna">  
-    <h1>Concurso creation</h1>
-
-    <form action="{{ path('concurso_create') }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
-            <p>
-                <button type="submit">Create</button>
-            </p>
-        </form>
-
-        <ul class="record_actions">
-            <li>
-                <a href="{{ path('concurso') }}">
-                    Back to the list
-                </a>
-            </li>
-        </ul>
+     <form action="{{ path('concurso_create') }}" method="post" {{ form_enctype(form) }}>
+        <div class="divinterna">  
+        {{ form_widget(form) }}
+     </div>
+    <div class="divbotones">
+        <button class="btnaceptar" type="submit"></button>
+        <button class="btncancelar" type="button"  onclick='window.location.href = "{{ path('concurso')}}"'></button>
+    </div>
 {% endblock %}
 {% block documentReady %}
     {{ parent() }}

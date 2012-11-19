@@ -1,5 +1,9 @@
-<h1>Concurso list</h1>
-
+{% extends '::backend.html.twig' %}
+{% block id 'oficina' %}
+{% block titulo %}
+<h1>Listado de Concursos</h1>
+{% endblock %}
+{% block contenido %}
 <table class="records_list">
     <thead>
         <tr>
@@ -47,3 +51,4 @@
         </a>
     </li>
 </ul>
+{% endblock %}
