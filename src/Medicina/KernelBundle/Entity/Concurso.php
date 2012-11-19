@@ -95,7 +95,7 @@ class Concurso
     public function __construct()
     {
         $this->oficina = new \Doctrine\Common\Collections\ArrayCollection();
-    $this->persona = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->persona = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
 
