@@ -1,22 +1,23 @@
+{% extends '::backend.html.twig' %}
+{% block id 'oficina' %}
+{% block titulo %}
+<h1>Editar Persona</h1>
+{% endblock %}
+{% block contenido %}
 <h1>Editar Persona</h1>
 
 <form action="{{ path('persona_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+    <div class="divinterna">  
     {{ form_widget(edit_form) }}
-    <p>
-        <button type="submit">Editar</button>
-    </p>
-</form>
-
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('persona') }}">
-            Volver
-        </a>
-    </li>
-    <li>
-        <form action="{{ path('persona_delete', { 'id': entity.id }) }}" method="post">
+        </div>
+        <div class="divbotones">
+            <button class="btnaceptar" type="submit"></button>
+            <button class="btncancelar" type="button"  onclick='window.location.href = "{{ path('oficina')}}"'></button>
+            <form action="{{ path('persona_delete', { 'id': entity.id }) }}" method="post">
             {{ form_widget(delete_form) }}
-            <button type="submit">Borrar</button>
+                    <button type="submit">Borrar</button>
+                </form>
+            </div>
         </form>
-    </li>
-</ul>
+
+{% endblock %}

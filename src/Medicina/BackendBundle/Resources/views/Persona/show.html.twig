@@ -1,5 +1,9 @@
-<h1>Persona</h1>
-
+{% extends '::backend.html.twig' %}
+{% block id 'oficina' %}
+{% block titulo %}
+    <h1>Datos de la Persona</h1>
+{% endblock %}
+{% block contenido %}
 <table class="record_properties">
     <tbody>
  
@@ -52,3 +56,4 @@
         </form>
     </li>
 </ul>
+{% endblock %}

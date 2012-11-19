@@ -1,7 +1,7 @@
 {% extends '::backend.html.twig' %}
 
 {% block id 'oficina' %}
-{% block title %}Datos de la oficina {% endblock %}
+{% block title %}Datos de la Catedra {% endblock %}
 
 {% block article %}
 <h1>{{ block('title') }}</h1>
@@ -27,7 +27,7 @@
     </li>
     <li>
         <a href="{{ path('backend_catedra_edit', { 'id': entity.id }) }}">
-            Modificar oficina
+            Modificar Catedra
         </a>
     </li>
     <li>
@@ -38,3 +38,5 @@
     </li>
 </ul>
 {% endblock %}
+
+

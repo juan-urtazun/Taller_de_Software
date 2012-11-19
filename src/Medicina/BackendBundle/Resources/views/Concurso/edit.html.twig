@@ -1,3 +1,9 @@
+{% extends '::backend.html.twig' %}
+{% block id 'oficina' %}
+{% block titulo %}
+    <h1>Editar Concurso</h1>
+{% endblock %}
+{% block contenido %}
 <h1>Concurso edit</h1>
 
 <form action="{{ path('concurso_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
@@ -20,3 +26,4 @@
         </form>
     </li>
 </ul>
+{% endblock %}
