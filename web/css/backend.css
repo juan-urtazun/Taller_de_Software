@@ -250,3 +250,7 @@ input.FUimgporBox{background-color: #C8EFB5;border: 1px solid #84B56D;color: #5C
 .formError .formErrorArrow .line3 {width: 1px;border-left: 2px solid #ddd;border-right: 2px solid #ddd;border-bottom: 0 solid #ddd;}
 .formError .formErrorArrow .line2 {width: 3px;border: none;background: #ddd;}
 .formError .formErrorArrow .line1 {width: 1px;border: none;background: #ddd;}
+
+.divinterna input.date{
+    width:70px;
+}
