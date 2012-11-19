@@ -1,0 +1,49 @@
+<h1>Concurso list</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Fechainicioexpediente</th>
+            <th>Fechacierre</th>
+            <th>Fechainicioinscripcion</th>
+            <th>Fechaevaluacion</th>
+            <th>Fechaentregaacta</th>
+            <th>Numeroexpediente</th>
+            <th>Cerrado</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('concurso_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{% if entity.fechaInicioExpediente %}{{ entity.fechaInicioExpediente|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>{% if entity.fechaCierre %}{{ entity.fechaCierre|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>{% if entity.fechaInicioInscripcion %}{{ entity.fechaInicioInscripcion|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>{% if entity.fechaEvaluacion %}{{ entity.fechaEvaluacion|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>{% if entity.fechaEntregaActa %}{{ entity.fechaEntregaActa|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>{{ entity.numeroExpediente }}</td>
+            <td>{{ entity.cerrado }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('concurso_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('concurso_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('concurso_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>

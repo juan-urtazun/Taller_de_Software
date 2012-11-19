@@ -1,0 +1,57 @@
+<h1>Concurso</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Fechainicioexpediente</th>
+            <td>{{ entity.fechaInicioExpediente|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Fechacierre</th>
+            <td>{{ entity.fechaCierre|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Fechainicioinscripcion</th>
+            <td>{{ entity.fechaInicioInscripcion|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Fechaevaluacion</th>
+            <td>{{ entity.fechaEvaluacion|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Fechaentregaacta</th>
+            <td>{{ entity.fechaEntregaActa|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Numeroexpediente</th>
+            <td>{{ entity.numeroExpediente }}</td>
+        </tr>
+        <tr>
+            <th>Cerrado</th>
+            <td>{{ entity.cerrado }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('concurso') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('concurso_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('concurso_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

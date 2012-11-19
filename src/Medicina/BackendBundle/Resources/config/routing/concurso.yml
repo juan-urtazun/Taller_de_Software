@@ -1,0 +1,30 @@
+concurso:
+    pattern:  /
+    defaults: { _controller: "BackendBundle:Concurso:index" }
+
+concurso_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BackendBundle:Concurso:show" }
+
+concurso_new:
+    pattern:  /new
+    defaults: { _controller: "BackendBundle:Concurso:new" }
+
+concurso_create:
+    pattern:  /create
+    defaults: { _controller: "BackendBundle:Concurso:create" }
+    requirements: { _method: post }
+
+concurso_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BackendBundle:Concurso:edit" }
+
+concurso_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BackendBundle:Concurso:update" }
+    requirements: { _method: post }
+
+concurso_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BackendBundle:Concurso:delete" }
+    requirements: { _method: post }

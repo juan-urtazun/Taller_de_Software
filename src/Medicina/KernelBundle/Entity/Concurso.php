@@ -96,6 +96,7 @@ class Concurso
     {
         $this->oficina = new \Doctrine\Common\Collections\ArrayCollection();
         $this->persona = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->fechaInicioExpediente = new \DateTime();
     }
     
 

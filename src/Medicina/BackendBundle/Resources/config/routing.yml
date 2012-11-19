@@ -23,3 +23,7 @@ BackendTipodecargo:
 BackendPersona:
     resource: "@BackendBundle/Resources/config/routing/persona.yml"
     prefix: /persona
+    
+BackendConcurso:
+    resource: "@BackendBundle/Resources/config/routing/concurso.yml"
+    prefix: /concurso

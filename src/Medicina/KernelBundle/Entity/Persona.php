@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="persona")
  * @ORM\Entity
  */
-class Persona
-{
+class Persona {
+
     /**
      * @var integer $id
      *
@@ -100,20 +100,17 @@ class Persona
      */
     private $cargo;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->concurso = new \Doctrine\Common\Collections\ArrayCollection();
-    $this->cargo = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->cargo = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
 
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -122,8 +119,7 @@ class Persona
      *
      * @param string $email
      */
-    public function setEmail($email)
-    {
+    public function setEmail($email) {
         $this->email = $email;
     }
 
@@ -132,8 +128,7 @@ class Persona
      *
      * @return string 
      */
-    public function getEmail()
-    {
+    public function getEmail() {
         return $this->email;
     }
 
@@ -142,8 +137,7 @@ class Persona
      *
      * @param string $telefono
      */
-    public function setTelefono($telefono)
-    {
+    public function setTelefono($telefono) {
         $this->telefono = $telefono;
     }
 
@@ -152,8 +146,7 @@ class Persona
      *
      * @return string 
      */
-    public function getTelefono()
-    {
+    public function getTelefono() {
         return $this->telefono;
     }
 
@@ -162,8 +155,7 @@ class Persona
      *
      * @param string $nombre
      */
-    public function setNombre($nombre)
-    {
+    public function setNombre($nombre) {
         $this->nombre = $nombre;
     }
 
@@ -172,8 +164,7 @@ class Persona
      *
      * @return string 
      */
-    public function getNombre()
-    {
+    public function getNombre() {
         return $this->nombre;
     }
 
@@ -182,8 +173,7 @@ class Persona
      *
      * @param string $apellido
      */
-    public function setApellido($apellido)
-    {
+    public function setApellido($apellido) {
         $this->apellido = $apellido;
     }
 
@@ -192,8 +182,7 @@ class Persona
      *
      * @return string 
      */
-    public function getApellido()
-    {
+    public function getApellido() {
         return $this->apellido;
     }
 
@@ -202,8 +191,7 @@ class Persona
      *
      * @param string $dni
      */
-    public function setDni($dni)
-    {
+    public function setDni($dni) {
         $this->dni = $dni;
     }
 
@@ -212,8 +200,7 @@ class Persona
      *
      * @return string 
      */
-    public function getDni()
-    {
+    public function getDni() {
         return $this->dni;
     }
 
@@ -222,8 +209,7 @@ class Persona
      *
      * @param string $direccion
      */
-    public function setDireccion($direccion)
-    {
+    public function setDireccion($direccion) {
         $this->direccion = $direccion;
     }
 
@@ -232,8 +218,7 @@ class Persona
      *
      * @return string 
      */
-    public function getDireccion()
-    {
+    public function getDireccion() {
         return $this->direccion;
     }
 
@@ -242,8 +227,7 @@ class Persona
      *
      * @param string $codigopostal
      */
-    public function setCodigopostal($codigopostal)
-    {
+    public function setCodigopostal($codigopostal) {
         $this->codigopostal = $codigopostal;
     }
 
@@ -252,8 +236,7 @@ class Persona
      *
      * @return string 
      */
-    public function getCodigopostal()
-    {
+    public function getCodigopostal() {
         return $this->codigopostal;
     }
 
@@ -262,8 +245,7 @@ class Persona
      *
      * @param Medicina\KernelBundle\Entity\Concurso $concurso
      */
-    public function addConcurso(\Medicina\KernelBundle\Entity\Concurso $concurso)
-    {
+    public function addConcurso(\Medicina\KernelBundle\Entity\Concurso $concurso) {
         $this->concurso[] = $concurso;
     }
 
@@ -272,8 +254,7 @@ class Persona
      *
      * @return Doctrine\Common\Collections\Collection 
      */
-    public function getConcurso()
-    {
+    public function getConcurso() {
         return $this->concurso;
     }
 
@@ -282,8 +263,7 @@ class Persona
      *
      * @param Medicina\KernelBundle\Entity\Cargo $cargo
      */
-    public function addCargo(\Medicina\KernelBundle\Entity\Cargo $cargo)
-    {
+    public function addCargo(\Medicina\KernelBundle\Entity\Cargo $cargo) {
         $this->cargo[] = $cargo;
     }
 
@@ -292,8 +272,15 @@ class Persona
      *
      * @return Doctrine\Common\Collections\Collection 
      */
-    public function getCargo()
-    {
+    public function getCargo() {
         return $this->cargo;
     }
+    public function getNombreYApellido() {
+        return $this->getApellido(). " " .$this->getNombre();
+    }
+
+    public function __toString() {
+        return $this->getNombreYApellido();
+    }
+
 }

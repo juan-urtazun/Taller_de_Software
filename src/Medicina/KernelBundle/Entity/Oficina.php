@@ -90,4 +90,8 @@ class Oficina
     {
         return $this->concurso;
     }
+    public function __toString()
+    {
+        return $this->getNombre();
+    }
 }
