@@ -19,3 +19,7 @@ BackendCatedra:
 BackendTipodecargo:
     resource: "@BackendBundle/Resources/config/routing/tipodecargo.yml"
     prefix: /tipodecargo
+    
+BackendPersona:
+    resource: "@BackendBundle/Resources/config/routing/persona.yml"
+    prefix: /persona

@@ -4,6 +4,4 @@ BackendBundle:
     resource: "@BackendBundle/Resources/config/routing.yml"
     prefix:   /backend
     
-MedicinaKernelBundle:
-    resource: "@MedicinaKernelBundle/Resources/config/routing.yml"
-    prefix:   /
+

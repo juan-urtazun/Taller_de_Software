@@ -1,0 +1,47 @@
+<h1>Personas</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th>Dni</th>
+            <th>Dirección</th>
+            <th>Codigo Postal</th>
+            <th>Operaciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('persona_show', { 'id': entity.id }) }}">{{  entity.nombre  }}</a></td>
+                <td>{{ entity.apellido }}</td>
+                <td>{{ entity.dni }}</td>
+                <td>{{ entity.email }}</td>
+                <td>{{ entity.telefono }}</td>
+                <td>{{ entity.direccion }}</td>
+                <td>{{ entity.codigopostal }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('persona_show', { 'id': entity.id }) }}">Ver</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('persona_edit', { 'id': entity.id }) }}">Editar</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('persona_new') }}">
+                Agregar Persona
+            </a>
+        </li>
+    </ul>

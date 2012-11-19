@@ -1,0 +1,54 @@
+<h1>Persona</h1>
+
+<table class="record_properties">
+    <tbody>
+ 
+        <tr>
+            <th>Nombre</th>
+            <td>{{ entity.nombre }}</td>
+        </tr>
+        <tr>
+            <th>Apellido</th>
+            <td>{{ entity.apellido }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ entity.email }}</td>
+        </tr>
+        <tr>
+            <th>Telefono</th>
+            <td>{{ entity.telefono }}</td>
+        </tr>
+        <tr>
+            <th>Dni</th>
+            <td>{{ entity.dni }}</td>
+        </tr>
+        <tr>
+            <th>Direccion</th>
+            <td>{{ entity.direccion }}</td>
+        </tr>
+        <tr>
+            <th>Codigo Postal</th>
+            <td>{{ entity.codigopostal }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('persona') }}">
+            Volver
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('persona_edit', { 'id': entity.id }) }}">
+            Editar
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('persona_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Borrar</button>
+        </form>
+    </li>
+</ul>
