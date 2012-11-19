@@ -1,0 +1,46 @@
+<?php
+
+namespace Medicina\KernelBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Medicina\KernelBundle\Entity\Personacargo
+ *
+ * @ORM\Table(name="personacargo")
+ * @ORM\Entity
+ */
+class Personacargo
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var boolean $renueva
+     *
+     * @ORM\Column(name="renueva", type="boolean", nullable=false)
+     */
+    private $renueva;
+
+    /**
+     * @var datetime $fechaInicio
+     *
+     * @ORM\Column(name="fecha_inicio", type="datetime", nullable=false)
+     */
+    private $fechaInicio;
+
+    /**
+     * @var datetime $fechaFin
+     *
+     * @ORM\Column(name="fecha_fin", type="datetime", nullable=false)
+     */
+    private $fechaFin;
+
+
+}

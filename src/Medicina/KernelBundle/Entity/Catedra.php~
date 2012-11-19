@@ -1,0 +1,39 @@
+<?php
+
+namespace Medicina\KernelBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Medicina\KernelBundle\Entity\Catedra
+ *
+ * @ORM\Table(name="catedra")
+ * @ORM\Entity
+ */
+class Catedra
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string $codigo
+     *
+     * @ORM\Column(name="codigo", type="string", length=255, nullable=true)
+     */
+    private $codigo;
+
+    /**
+     * @var string $nombre
+     *
+     * @ORM\Column(name="nombre", type="string", length=255, nullable=false)
+     */
+    private $nombre;
+
+
+}

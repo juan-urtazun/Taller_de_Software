@@ -1,0 +1,77 @@
+<?php
+
+namespace Medicina\KernelBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Medicina\KernelBundle\Entity\Cargo
+ *
+ * @ORM\Table(name="cargo")
+ * @ORM\Entity
+ */
+class Cargo
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string $codigo
+     *
+     * @ORM\Column(name="codigo", type="string", length=255, nullable=false)
+     */
+    private $codigo;
+
+    /**
+     * @var integer $consursoId
+     *
+     * @ORM\Column(name="consurso_id", type="integer", nullable=true)
+     */
+    private $consursoId;
+
+    /**
+     * @var string $tipoDeDedicacion
+     *
+     * @ORM\Column(name="tipo_de_dedicacion", type="string", length=255, nullable=false)
+     */
+    private $tipoDeDedicacion;
+
+    /**
+     * @var Persona
+     *
+     * @ORM\ManyToMany(targetEntity="Persona", mappedBy="cargo")
+     */
+    private $persona;
+
+    /**
+     * @var Catedra
+     *
+     * @ORM\ManyToOne(targetEntity="Catedra")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="catedra_id", referencedColumnName="id")
+     * })
+     */
+    private $catedra;
+
+    /**
+     * @var Tipodecargo
+     *
+     * @ORM\ManyToOne(targetEntity="Tipodecargo")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="tipodecargo_id", referencedColumnName="id")
+     * })
+     */
+    private $tipodecargo;
+
+    public function __construct()
+    {
+        $this->persona = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+}

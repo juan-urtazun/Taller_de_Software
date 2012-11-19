@@ -1,0 +1,46 @@
+<?php
+
+namespace Medicina\KernelBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Medicina\KernelBundle\Entity\Tipodecargo
+ *
+ * @ORM\Table(name="tipodecargo")
+ * @ORM\Entity
+ */
+class Tipodecargo
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer $duracion
+     *
+     * @ORM\Column(name="duracion", type="integer", nullable=false)
+     */
+    private $duracion;
+
+    /**
+     * @var string $nombre
+     *
+     * @ORM\Column(name="nombre", type="string", length=255, nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var string $codigo
+     *
+     * @ORM\Column(name="codigo", type="string", length=255, nullable=true)
+     */
+    private $codigo;
+
+
+}

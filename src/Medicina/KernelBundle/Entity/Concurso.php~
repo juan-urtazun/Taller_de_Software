@@ -1,0 +1,101 @@
+<?php
+
+namespace Medicina\KernelBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Medicina\KernelBundle\Entity\Concurso
+ *
+ * @ORM\Table(name="concurso")
+ * @ORM\Entity
+ */
+class Concurso
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var datetime $fechaInicioExpediente
+     *
+     * @ORM\Column(name="fecha_inicio_expediente", type="datetime", nullable=false)
+     */
+    private $fechaInicioExpediente;
+
+    /**
+     * @var date $fechaCierre
+     *
+     * @ORM\Column(name="fecha_cierre", type="date", nullable=true)
+     */
+    private $fechaCierre;
+
+    /**
+     * @var date $fechaInicioInscripcion
+     *
+     * @ORM\Column(name="fecha_inicio_inscripcion", type="date", nullable=false)
+     */
+    private $fechaInicioInscripcion;
+
+    /**
+     * @var date $fechaEvaluacion
+     *
+     * @ORM\Column(name="fecha_evaluacion", type="date", nullable=true)
+     */
+    private $fechaEvaluacion;
+
+    /**
+     * @var datetime $fechaEntregaActa
+     *
+     * @ORM\Column(name="fecha_entrega_acta", type="datetime", nullable=true)
+     */
+    private $fechaEntregaActa;
+
+    /**
+     * @var integer $numeroExpediente
+     *
+     * @ORM\Column(name="numero_expediente", type="integer", nullable=false)
+     */
+    private $numeroExpediente;
+
+    /**
+     * @var boolean $cerrado
+     *
+     * @ORM\Column(name="cerrado", type="boolean", nullable=true)
+     */
+    private $cerrado;
+
+    /**
+     * @var Oficina
+     *
+     * @ORM\ManyToMany(targetEntity="Oficina", inversedBy="concurso")
+     * @ORM\JoinTable(name="concursooficina",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="concurso_id", referencedColumnName="id")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="oficina_id", referencedColumnName="id")
+     *   }
+     * )
+     */
+    private $oficina;
+
+    /**
+     * @var Persona
+     *
+     * @ORM\ManyToMany(targetEntity="Persona", mappedBy="concurso")
+     */
+    private $persona;
+
+    public function __construct()
+    {
+        $this->oficina = new \Doctrine\Common\Collections\ArrayCollection();
+    $this->persona = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+}

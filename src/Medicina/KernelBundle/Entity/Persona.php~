@@ -1,0 +1,109 @@
+<?php
+
+namespace Medicina\KernelBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Medicina\KernelBundle\Entity\Persona
+ *
+ * @ORM\Table(name="persona")
+ * @ORM\Entity
+ */
+class Persona
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string $email
+     *
+     * @ORM\Column(name="email", type="string", length=255, nullable=false)
+     */
+    private $email;
+
+    /**
+     * @var string $telefono
+     *
+     * @ORM\Column(name="telefono", type="string", length=255, nullable=false)
+     */
+    private $telefono;
+
+    /**
+     * @var string $nombre
+     *
+     * @ORM\Column(name="nombre", type="string", length=255, nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var string $apellido
+     *
+     * @ORM\Column(name="apellido", type="string", length=255, nullable=false)
+     */
+    private $apellido;
+
+    /**
+     * @var string $dni
+     *
+     * @ORM\Column(name="dni", type="string", length=255, nullable=false)
+     */
+    private $dni;
+
+    /**
+     * @var string $direccion
+     *
+     * @ORM\Column(name="direccion", type="string", length=255, nullable=false)
+     */
+    private $direccion;
+
+    /**
+     * @var string $codigopostal
+     *
+     * @ORM\Column(name="codigoPostal", type="string", length=255, nullable=false)
+     */
+    private $codigopostal;
+
+    /**
+     * @var Concurso
+     *
+     * @ORM\ManyToMany(targetEntity="Concurso", inversedBy="persona")
+     * @ORM\JoinTable(name="inscripcion",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="persona_id", referencedColumnName="id")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="concurso_id", referencedColumnName="id")
+     *   }
+     * )
+     */
+    private $concurso;
+
+    /**
+     * @var Cargo
+     *
+     * @ORM\ManyToMany(targetEntity="Cargo", inversedBy="persona")
+     * @ORM\JoinTable(name="personacargo",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="persona_id", referencedColumnName="id")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="cargo_id", referencedColumnName="id")
+     *   }
+     * )
+     */
+    private $cargo;
+
+    public function __construct()
+    {
+        $this->concurso = new \Doctrine\Common\Collections\ArrayCollection();
+    $this->cargo = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+}

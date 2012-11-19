@@ -1,0 +1,65 @@
+<?php
+
+namespace Medicina\KernelBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Medicina\KernelBundle\Entity\Auditoria
+ *
+ * @ORM\Table(name="auditoria")
+ * @ORM\Entity
+ */
+class Auditoria
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string $tablename
+     *
+     * @ORM\Column(name="tablename", type="string", length=50, nullable=false)
+     */
+    private $tablename;
+
+    /**
+     * @var integer $tuplaId
+     *
+     * @ORM\Column(name="tupla_id", type="integer", nullable=false)
+     */
+    private $tuplaId;
+
+    /**
+     * @var string $tipoactividad
+     *
+     * @ORM\Column(name="tipoactividad", type="string", length=1, nullable=false)
+     */
+    private $tipoactividad;
+
+    /**
+     * @var datetime $fecha
+     *
+     * @ORM\Column(name="fecha", type="datetime", nullable=false)
+     */
+    private $fecha;
+
+    /**
+     * @var Usuario
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\OneToOne(targetEntity="Usuario")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="usuario_id", referencedColumnName="id")
+     * })
+     */
+    private $usuario;
+
+
+}

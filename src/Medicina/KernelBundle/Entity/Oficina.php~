@@ -1,0 +1,43 @@
+<?php
+
+namespace Medicina\KernelBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Medicina\KernelBundle\Entity\Oficina
+ *
+ * @ORM\Table(name="oficina")
+ * @ORM\Entity
+ */
+class Oficina
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string $nombre
+     *
+     * @ORM\Column(name="nombre", type="string", length=255, nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var Concurso
+     *
+     * @ORM\ManyToMany(targetEntity="Concurso", mappedBy="oficina")
+     */
+    private $concurso;
+
+    public function __construct()
+    {
+        $this->concurso = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+}

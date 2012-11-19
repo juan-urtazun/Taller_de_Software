@@ -1,0 +1,63 @@
+<?php
+
+namespace Medicina\KernelBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Medicina\KernelBundle\Entity\Impugnacion
+ *
+ * @ORM\Table(name="impugnacion")
+ * @ORM\Entity
+ */
+class Impugnacion
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var datetime $fecharecibida
+     *
+     * @ORM\Column(name="fechaRecibida", type="datetime", nullable=false)
+     */
+    private $fecharecibida;
+
+    /**
+     * @var text $observacion
+     *
+     * @ORM\Column(name="observacion", type="text", nullable=true)
+     */
+    private $observacion;
+
+    /**
+     * @var date $fechaExpiracion
+     *
+     * @ORM\Column(name="fecha_expiracion", type="date", nullable=true)
+     */
+    private $fechaExpiracion;
+
+    /**
+     * @var date $fecharesolucion
+     *
+     * @ORM\Column(name="fechaResolucion", type="date", nullable=false)
+     */
+    private $fecharesolucion;
+
+    /**
+     * @var Oficina
+     *
+     * @ORM\ManyToOne(targetEntity="Oficina")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="oficina_id", referencedColumnName="id")
+     * })
+     */
+    private $oficina;
+
+
+}
