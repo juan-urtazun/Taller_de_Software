@@ -2,7 +2,7 @@
     
 backend:
     pattern:   /
-    defaults:  { _controller: BackendBundle:Default:login }
+    defaults:  { _controller: BackendBundle:Default:index }
 
 backend_index:
     pattern:   /index

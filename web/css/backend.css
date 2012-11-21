@@ -80,7 +80,7 @@ ul#topnav .sub ul li a:hover{color: #ddd;text-decoration: underline;background-c
 /*//////////////////////////////////////////////////////*/
 .sesioncenter{text-align: right;width: 880px;height: 27px;padding-top: 6px;margin:0 auto;}
 .sesioncenter img{float:left;}
-.sesioncenter .imgico{margin-top:-2px;height:25px;width:25px;}
+.sesioncenter .imgico{margin-top:-2px;height:25px;}
 .divtitulo{float:left;padding:6px 0px 0px 2px;font-family: Arial;color: #fff;font-size: 8pt;font-weight: bold;}
 .divbarrasesion{float:right;}
 ul#itemsbarrasesion{margin: 0;padding: 0;float: left;list-style: none;height: 29px;}

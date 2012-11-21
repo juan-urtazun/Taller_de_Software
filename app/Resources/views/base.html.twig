@@ -8,6 +8,41 @@
         {% block javascripts %}{% endblock %}
     </head>
     <body class="body">
+        <!-- NO MODIFICAR - Banner de Sessión -->
+        <div class="sesion">
+            <div id="barrasesion" class="barrasesion">
+            <div class="sesioncenter">
+            <img alt="" class="imgico" src="{{ asset('images/session/logo30.png') }}"/>
+            <div class="divtitulo">Facultad de Cs. M&eacute;dicas</div>
+            <div class="divbarrasesion">
+            <ul id="itemsbarrasesion">
+             <ol id="barlogon">
+                <li><a class="menuboton1"><img alt="" src="{{ asset('images/session/usuario.png') }}"/>
+                    <span>
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            Usuario: {{ app.user.username }}
+                         {% else %}
+                            Usuario: Anónimo
+                        {% endif %}
+                        </span></a>
+                </li>
+                <li>
+                    <a href="#" class="menuboton1"><img alt="" src="{{ asset('images/session/config.png') }}"/>Configuración</a>
+                    <div class="sub">
+                        <ul>
+                            <li><img src="{{ asset('images/session/cuenta.png') }}"/><div><a href="#">Configuración de Cuenta</a></div></li>
+                            <li><img src="{{ asset('images/session/ayuda.png') }}"/><div><a href="#">Contacto y Ayuda</a></div></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="{{ path('fos_user_security_logout') }}" class="menuboton1"><img src="{{ asset('images/session/cerrar.png') }}"/>Cerrar Sesión</a></li>
+             </ol>
+            </ul>
+            </div>
+        </div>
+            </div>
+        </div>
+        <!-- FIN NO MODIFICAR - Banner de Sessión -->
         <div class="contenedor">
             <!-- INICIO. Medio Página -->
             <div class="mid">

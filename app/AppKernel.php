@@ -18,6 +18,8 @@ class AppKernel extends Kernel {
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Medicina\BackendBundle\BackendBundle(),
             new Medicina\KernelBundle\MedicinaKernelBundle(),
+            // ...
+            new FOS\UserBundle\FOSUserBundle(),
         );
 
 

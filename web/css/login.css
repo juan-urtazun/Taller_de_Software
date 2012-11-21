@@ -22,21 +22,40 @@ blockquote:before, blockquote:after,
 q:before, q:after {content: '';content: none;}
 table {border-collapse: collapse;border-spacing:0;}
 
-body{background:url(../images/login/bkg_grisDF_1.png);color:#000;font-family:Helvetica,sans-serif;font-size:12px;}
+body{background:url(../images/login/bkg_grisDF.png);color:#000;font-family:Helvetica,sans-serif;font-size:12px;}
 #block{width:426px;margin:0 auto;position:relative;}
-.logo{margin-top: 15px; margin-left:460px;}
+.logo{margin-top: 15px; margin-left:504px;}
 .form{background:url(../images/login/form.png) repeat-y;padding:13px 0 25px 0;margin-top:18px;position:relative;}
 .form .login-box{background:url(../images/login/login-box.png) no-repeat;color:#fff;font-size:14px;font-weight:bold;text-transform:uppercase;
-	width:93px;padding:14px 0 14px 16px;margin-bottom:11px;position:relative;left:-4px;float:left;}
+	width:130px;padding:14px 0 14px 16px;margin-bottom:11px;position:relative;left:-4px;}
 .form .warning {background:url(../images/login/warning.png) no-repeat;height:28px;padding:0 0 0 34px;margin:7px 0px 0 113px;position:relative;}
 .form .warning p {background:url(../images/login/warning-p.png) repeat-x left center;color:#c51f00;font-size:11px;height:19px;font-weight:bold;padding:9px 6px 0 0;float:left;}
 .form .warning p.c {background:url(../images/login/warning-p.c.png) no-repeat right center;text-indent:-1000px;padding:0 0 0 0;height:28px;width:2px;}
-.form input {background:url(../images/login/input.png) no-repeat;color:#5d5d5d;font-size:12px;font-style:italic;
+.inputText {background:url(../images/login/input.png) no-repeat;color:#5d5d5d;font-size:12px;font-style:italic;
 	width:322px;height:43px;padding-left:18px;margin:0 0 16px 40px;border:none;clear:left;}
-.form .btn {padding-bottom:0;float:left;}
-.form .btn input{background:url(../images/login/p.btn-input.png) no-repeat;color:#fff;font-size:12px;font-weight:bold;text-transform:uppercase;font-style:normal;text-indent:-1000px;
-	width:111px;line-height:43px;padding:0;margin:0 0 0 40px;border:none;cursor:pointer;float:left;}
-.form .btn input:hover{background:url(../images/login/p.btn-input.hover.png) no-repeat;}
+.inputCheck{-webkit-appearance: none; appearance: none; width: 13px; height: 13px;margin: 0;cursor: pointer;vertical-align: bottom; background: white;border: 1px solid gainsboro;-webkit-border-radius: 1px;-moz-border-radius: 1px;border-radius: 1px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;position: relative;}
+.labelInput {margin:0 0 5px 40px; font-weight: bold; display: block;}
+.labelCeck {font-weight: bold; display: inline-block; vertical-align: top; margin: 15px 0 0 25px;}
+.btn {
+    padding-bottom:0;
+    float:left; 
+    background:url(../images/login/p.btn-input.png) no-repeat;
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    text-transform:uppercase;
+    font-style:normal;
+    text-indent:-1000px;
+    width:111px;
+    height: 40px;
+    line-height:43px;
+    padding:0;
+    margin:0 0 0 40px;
+    border:none;
+    cursor:pointer;
+    vertical-align: bottom;
+}
+.btn:hover{background:url(../images/login/p.btn-input.hover.png) no-repeat;}
 .form .nav-path{margin-left:162px;}
 .form .nav-path li{line-height:19px;}
 .form .nav-path li a{color:#005fa2;font-size:11px;}
