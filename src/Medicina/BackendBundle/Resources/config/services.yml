@@ -5,3 +5,8 @@ services:
 #    backend.example:
 #        class: %backend.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+    backend.admin.oficina:
+        class: Medicina\BackendBundle\Admin\OficinaAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Administración, label: Oficinas }
+        arguments: [null, Medicina\KernelBundle\Entity\Oficina, BackendBundle:OficinaAdmin]
